@@ -42,6 +42,11 @@ describe('Given RepositoryTattoo', () => {
             expect(fetch).toHaveBeenCalled();
             expect(result).toEqual([]);
         });
+
+        test('Then should return error', async () => {
+            global.fetch = jest.fn().mockResolvedValue(response);
+            await expect(async () => await service.getAll()).rejects.toThrow();
+        });
     });
 
     describe('When get is called', () => {
