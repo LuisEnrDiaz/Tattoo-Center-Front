@@ -1,4 +1,4 @@
-import { TattooI } from '../../../model/types/typesTattoos/typesTattoos';
+import { TattooI } from '../../../types/typesTattoos/typesTattoos';
 import { Repository } from '../../../model/interfaces/interfaceTattoo/repository';
 
 export class TattooRepository implements Repository<TattooI> {
@@ -57,10 +57,10 @@ export class TattooRepository implements Repository<TattooI> {
         });
     }
 
-    update(item: Partial<TattooI>): Promise<TattooI> {
+    update(partialTattoo: Partial<TattooI>): Promise<TattooI> {
         return fetch(this.url, {
             method: 'PATCH',
-            body: JSON.stringify(item),
+            body: JSON.stringify(partialTattoo),
             headers: {
                 'content-type': 'application/json',
             },

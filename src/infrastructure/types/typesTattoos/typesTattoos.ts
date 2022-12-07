@@ -1,8 +1,9 @@
 export type TattooI = {
     id: string;
     image: string;
-    categories: Array<string>;
+    categories: Array<Category>;
     link: string;
+    owner: string;
 };
 
 export type Category =
@@ -17,4 +18,5 @@ export type ProtoTattooI = {
     image: string;
     categories: Array<string>;
     link: string;
+    owner: string;
 };
