@@ -2,7 +2,7 @@ import {
     mockTattoo,
     newTattoo,
     updateTattoo,
-} from '../../../model/mocks/mockTattoo/mockTattoo';
+} from '../../../mocks/mockTattoo/mockTattoo';
 import { TattooRepository } from './tattooRepository';
 
 describe('Given RepositoryTattoo', () => {
