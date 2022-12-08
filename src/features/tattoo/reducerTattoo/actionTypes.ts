@@ -1,5 +1,5 @@
 export const actionTypes = {
-    load: 'tattoo@load',
+    load: 'tattoos@load',
     create: 'tattoos@create',
     update: 'tattoos@update',
     delete: 'tattoos@delete',

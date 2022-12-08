@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    background-color: #262525;
+}
+
+.title_text {
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.logo {
+    max-width: 3rem;
+    margin: 5px;
+}
