@@ -16,7 +16,7 @@ export type Category =
 
 export type ProtoTattooI = {
     image: string;
-    categories: Array<string>;
+    categories: Array<Category>;
     link: string;
     owner: string;
 };

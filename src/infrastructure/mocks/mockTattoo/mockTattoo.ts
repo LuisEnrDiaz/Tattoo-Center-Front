@@ -1,4 +1,4 @@
-import { TattooI } from '../../types/typesTattoos/typesTattoos';
+import { ProtoTattooI, TattooI } from '../../types/typesTattoos/typesTattoos';
 
 export const mockTattoo: TattooI = {
     id: '1',
@@ -16,10 +16,10 @@ export const deleteTattoo: TattooI = {
     owner: '',
 };
 
-export const newTattoo: Partial<TattooI> = {
+export const newTattoo: ProtoTattooI = {
     image: 'mayaImage',
     categories: ['JAPANESE'],
-    link: '',
+    link: 'mayaLink',
     owner: '',
 };
 

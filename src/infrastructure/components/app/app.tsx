@@ -1,7 +1,9 @@
+import { Header } from '../header/header';
+
 function App() {
     return (
         <>
-            <div>Luis Diaz</div>
+            <Header></Header>
         </>
     );
 }
