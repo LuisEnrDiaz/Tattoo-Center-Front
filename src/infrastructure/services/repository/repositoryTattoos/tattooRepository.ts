@@ -5,7 +5,8 @@ export class TattooRepository implements Repository<TattooI> {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:7700/tattoos';
+        this.url =
+            'http://localhost:7700/tattoos' || 'http://localhost:3300/tattoos';
     }
 
     createError(response: Response) {
@@ -18,9 +19,10 @@ export class TattooRepository implements Repository<TattooI> {
     getAll(): Promise<Array<TattooI>> {
         return fetch(this.url)
             .then((response) => {
-                if (response.ok) {
-                    return response.json();
+                if (!response.ok) {
+                    throw this.createError(response);
                 }
+                return response.json();
             })
             .then((data) => {
                 return data.tattoos;

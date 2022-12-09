@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    background-color: #262525;
+    min-height: 5rem;
+    height: 20rem;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.logo {
+    display: flex;
+    background-color: #262525;
+    max-height: 13rem;
+}

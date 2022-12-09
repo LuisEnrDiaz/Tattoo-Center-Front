@@ -5,7 +5,7 @@ import {
     updateTattoo,
 } from '../../../infrastructure/mocks/mockTattoo/mockTattoo';
 import { TattooRepository } from '../../../infrastructure/services/repository/repositoryTattoos/tattooRepository';
-import { appStore } from '../../../infrastructure/store/store';
+import { appStore } from '../../../infrastructure/store/store/store';
 import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
 import { useTattoo } from './usetattoos';
 
@@ -20,7 +20,6 @@ describe('Given TattooRepository', () => {
             handleCreate: (newTattoo: TattooI) => void;
             handleUpdate: (updateTattoo: Partial<TattooI>) => void;
             handleDelete: (id: string) => void;
-            handleLoad: () => void;
         };
     };
 
@@ -47,19 +46,7 @@ describe('Given TattooRepository', () => {
 
     test('Then should return mockTattoo', async () => {
         await waitFor(() => {
-            expect(result.current.tattoos).toEqual([]);
-        });
-    });
-
-    describe('Given handleLoad is called', () => {
-        test('Then handleLoad return', async () => {
-            await waitFor(() => {
-                result.current.handleLoad();
-                expect(result.current.tattoos.at(-1)).toEqual(mockTattoo);
-            });
-            await waitFor(() => {
-                expect(TattooRepository.prototype.getAll).toHaveBeenCalled();
-            });
+            expect(result.current.tattoos).toEqual([mockTattoo]);
         });
     });
 
@@ -73,13 +60,20 @@ describe('Given TattooRepository', () => {
                 expect(TattooRepository.prototype.create).toHaveBeenCalled();
             });
         });
+
+        test('should first', () => {
+            const error = () => {
+                throw new Error('error');
+            };
+            expect(error).toThrowError();
+        });
     });
 
     describe('Given handleUpdate is called', () => {
         test('Then handleUpdate return', async () => {
             await waitFor(() => {
                 result.current.handleUpdate(updateTattoo);
-                expect(result.current.tattoos.at(1)).toEqual(updateTattoo);
+                expect(result.current.tattoos.at(-1)).toEqual(updateTattoo);
             });
             await waitFor(() => {
                 expect(TattooRepository.prototype.update).toHaveBeenCalled();

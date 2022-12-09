@@ -15,6 +15,8 @@ export function Header() {
                     <h1>{title}</h1>
                 </div>
             </div>
+
+            <div></div>
         </header>
     );
 }

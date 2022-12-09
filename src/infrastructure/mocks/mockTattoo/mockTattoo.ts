@@ -4,8 +4,8 @@ export const mockTattoo: TattooI = {
     id: '1',
     image: 'mayaImage',
     categories: ['TRIBAL'],
-    link: '',
-    owner: '',
+    link: 'mayaLink',
+    owner: '1',
 };
 
 export const deleteTattoo: TattooI = {

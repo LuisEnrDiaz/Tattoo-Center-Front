@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { tattooReducer } from '../../features/tattoo/reducerTattoo/reducerTattoo';
+import { tattooReducer } from '../../../features/tattoo/reducerTattoo/reducerTattoo';
 
 export const appStore = configureStore({
     reducer: {
