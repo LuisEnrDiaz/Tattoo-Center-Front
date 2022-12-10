@@ -1,29 +1,39 @@
 import { SyntheticEvent, useState } from 'react';
+import { TattooRepository } from '../../../../infrastructure/services/repository/repositoryTattoos/tattooRepository';
 import { ProtoTattooI } from '../../../../infrastructure/types/typesTattoos/typesTattoos';
 
 export function TattooForm() {
-    const tattoo: ProtoTattooI = {
+    const initialState: ProtoTattooI = {
         image: '',
-        categories: [],
+        categories: '',
         link: '',
         owner: '',
     };
+    const tattooServices = new TattooRepository();
 
-    const [value, setValue] = useState(tattoo);
+    const [value, setValue] = useState(initialState);
 
     const handleForm = (event: SyntheticEvent) => {
         const element = event.target as HTMLFormElement;
-
         setValue({ ...value, [element.name]: element.value });
+        console.log('prueba');
     };
 
-    const handlerSubmit = (event: SyntheticEvent) => {
+    const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
+
+        const tattoo = await tattooServices.create(value);
+        console.log(
+            '🚀 ~ file: tattooForm.tsx:26 ~ handleSubmit ~ user',
+            tattoo
+        );
+
+        return tattoo;
     };
 
     return (
         <>
-            <form onSubmit={handlerSubmit}>
+            <form onSubmit={handleSubmit}>
                 <legend>Formumlario</legend>
 
                 <div>
@@ -35,6 +45,7 @@ export function TattooForm() {
                         name="categories"
                         id="categories"
                         value={value.categories}
+                        multiple={false}
                         onInput={handleForm}
                         required
                     >

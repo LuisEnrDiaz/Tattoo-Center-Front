@@ -1,11 +1,17 @@
 import { createAction } from '@reduxjs/toolkit';
 import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
 
-import { actionTypes } from './actionTypes';
+import { actionTypesTattoo } from './actionTypes';
 
-export const loadActionCreator = createAction<Array<TattooI>>(actionTypes.load);
-export const createActionCreator = createAction<TattooI>(actionTypes.create);
-export const updateActionCreator = createAction<TattooI>(actionTypes.update);
+export const loadActionCreator = createAction<Array<TattooI>>(
+    actionTypesTattoo.load
+);
+export const createActionCreator = createAction<TattooI>(
+    actionTypesTattoo.create
+);
+export const updateActionCreator = createAction<TattooI>(
+    actionTypesTattoo.update
+);
 export const deleteActionCreator = createAction<TattooI['id']>(
-    actionTypes.delete
+    actionTypesTattoo.delete
 );

@@ -1,4 +1,4 @@
-import { actionTypes } from './actionTypes';
+import { actionTypesTattoo } from './actionTypes';
 import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
 import { tattooReducer } from './reducerTattoo';
 import {
@@ -11,7 +11,7 @@ describe('Given reducerTattoo', () => {
         describe('When loadActionCreator is called', () => {
             const state: TattooI[] = [];
             const action = {
-                type: actionTypes.load,
+                type: actionTypesTattoo.load,
                 payload: [mockTattoo],
             };
 
@@ -24,7 +24,7 @@ describe('Given reducerTattoo', () => {
         describe('When createActionCreator is called', () => {
             const state: TattooI[] = [];
             const action = {
-                type: actionTypes.create,
+                type: actionTypesTattoo.create,
                 payload: mockTattoo,
             };
 
@@ -37,7 +37,7 @@ describe('Given reducerTattoo', () => {
         describe('When updateActionCreator is called', () => {
             const state: TattooI[] = [mockTattoo];
             const action = {
-                type: actionTypes.update,
+                type: actionTypesTattoo.update,
                 payload: mockTattoo,
             };
 
@@ -49,7 +49,7 @@ describe('Given reducerTattoo', () => {
             test('Then updateActionCreator is different id', () => {
                 const state: TattooI[] = [deleteTattoo];
                 const action = {
-                    type: actionTypes.update,
+                    type: actionTypesTattoo.update,
                     payload: mockTattoo,
                 };
                 const result = tattooReducer(state, action);
@@ -60,7 +60,7 @@ describe('Given reducerTattoo', () => {
         describe('When deleteActionCreator is called', () => {
             const state = [deleteTattoo];
             const action = {
-                type: actionTypes.delete,
+                type: actionTypesTattoo.delete,
                 payload: deleteTattoo.id,
             };
 

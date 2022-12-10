@@ -1,5 +1,5 @@
 import { TattooI } from '../../../../infrastructure/types/typesTattoos/typesTattoos';
-import { useTattoo } from '../../hooks/usetattoos';
+import { useTattoo } from '../../hooks/usetattoo';
 import { TattooItem } from '../tattooItems/tattooItems';
 
 export function TattooList() {

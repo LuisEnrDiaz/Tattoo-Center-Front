@@ -4,16 +4,33 @@ export function Footer() {
     return (
         <footer>
             <div className={style.container}>
-                <div>
-                    <img src="./assets/@.png" alt="@"></img>
-                    <p>luis.enr.diaz.garcia@gmail.com</p>
+                <div className={style.container_email}>
+                    <img
+                        className={style.email}
+                        src="./assets/@.png"
+                        alt="@"
+                    ></img>
+                    <p className={style.email_text}>
+                        luis.enr.diaz.garcia@gmail.com
+                    </p>
                 </div>
-                <div>
+                <div className={style.container_logo}>
                     <img
                         className={style.logo}
                         src="./assets/Logo.png"
                         alt="skull with mustache"
                     />
+                    <div className={style.container_copyright}>
+                        <img
+                            className={style.copyright}
+                            src="./assets/copyright.png"
+                            alt="copyright"
+                        />
+                        <p className={style.copyright_text}>
+                            TATTOO CENTER Madrid, España 2020 All rights
+                            reserved
+                        </p>
+                    </div>
                 </div>
                 <div>
                     <img src="./assets/facebook.png" alt="logo facebook" />

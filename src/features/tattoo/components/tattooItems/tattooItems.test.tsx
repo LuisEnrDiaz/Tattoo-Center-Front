@@ -8,6 +8,7 @@ import {
 import { tattooReducer } from '../../reducerTattoo/reducerTattoo';
 import { TattooItem } from './tattooItems';
 import { mockTattoo } from '../../../../infrastructure/mocks/mockTattoo/mockTattoo';
+import { userReducer } from '../../../user/reducerUser/reducerUser';
 
 describe('Given RobotList component', () => {
     const preloadedState: rootState = {
@@ -15,15 +16,22 @@ describe('Given RobotList component', () => {
             {
                 id: '1',
                 image: 'mayaImage',
-                categories: ['TRIBAL'],
+                categories: 'TRIBAL',
                 link: 'mayaLink',
                 owner: '1',
             },
         ],
+        users: {
+            isLogged: false,
+            isLogging: false,
+            token: '',
+            user: null,
+        },
     };
     const mockStore: rootStore = configureStore({
         reducer: {
             tattoos: tattooReducer,
+            users: userReducer,
         },
         preloadedState,
     });
@@ -39,12 +47,4 @@ describe('Given RobotList component', () => {
         const element = screen.getByText(/TRIBAL/i);
         expect(element).toBeInTheDocument();
     });
-    // test('Then it should display the tattoo link name', () => {
-    //     const element = screen.getByText(/LINK mayaLink/i);
-    //     expect(element).toBeInTheDocument();
-    // });
-    // test('Then it should display the tattoo image name', () => {
-    //     const element = screen.getByText(/TRIBAL/i);
-    //     expect(element).toBeInTheDocument();
-    // });
 });

@@ -6,18 +6,18 @@ import {
     rootStore,
 } from '../../../../infrastructure/store/store/store';
 import { tattooReducer } from '../../reducerTattoo/reducerTattoo';
-import { TattooList } from './tattooList';
+import { TattooForm } from './tattooForm';
 import { userReducer } from '../../../user/reducerUser/reducerUser';
 
-describe('Given TattooList', () => {
+describe('Given RobotList component', () => {
     const preloadedState: rootState = {
         tattoos: [
             {
                 id: '1',
-                image: 'pepe',
-                categories: 'BLACK & GREY',
-                link: '',
-                owner: '',
+                image: 'mayaImage',
+                categories: 'TRIBAL',
+                link: 'mayaLink',
+                owner: '1',
             },
         ],
         users: {
@@ -36,16 +36,14 @@ describe('Given TattooList', () => {
     });
 
     describe('When we render the component', () => {
-        beforeEach(() => {
-            render(
-                <Provider store={mockStore}>
-                    <TattooList />
-                </Provider>
-            );
-        });
-        test('Then it should display the title', () => {
-            const element = screen.getByText(/BLACK & GREY/i);
-            expect(element).toBeInTheDocument();
-        });
+        render(
+            <Provider store={mockStore}>
+                <TattooForm />
+            </Provider>
+        );
+    });
+    test('Then it should display the tattoo Categories name', () => {
+        const element = screen.getByText(/CATEGORIES/i);
+        expect(element).toBeInTheDocument();
     });
 });

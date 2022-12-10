@@ -5,8 +5,7 @@ export class TattooRepository implements Repository<TattooI> {
     url: string;
 
     constructor() {
-        this.url =
-            'http://localhost:7700/tattoos' || 'http://localhost:3300/tattoos';
+        this.url = 'http://localhost:7700/tattoos';
     }
 
     createError(response: Response) {

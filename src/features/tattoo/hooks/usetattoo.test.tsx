@@ -7,7 +7,7 @@ import {
 import { TattooRepository } from '../../../infrastructure/services/repository/repositoryTattoos/tattooRepository';
 import { appStore } from '../../../infrastructure/store/store/store';
 import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
-import { useTattoo } from './usetattoos';
+import { useTattoo } from './usetattoo';
 
 jest.mock(
     '../../../infrastructure/services/repository/repositoryTattoos/tattooRepository'

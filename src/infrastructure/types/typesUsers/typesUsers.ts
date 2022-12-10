@@ -18,3 +18,5 @@ export type ProtoUserI = {
     portfolio: Array<string>;
     description: string;
 };
+
+export type LoginUser = { user: UserI; token: string };

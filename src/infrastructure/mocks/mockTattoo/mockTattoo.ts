@@ -3,7 +3,7 @@ import { ProtoTattooI, TattooI } from '../../types/typesTattoos/typesTattoos';
 export const mockTattoo: TattooI = {
     id: '1',
     image: 'mayaImage',
-    categories: ['TRIBAL'],
+    categories: 'TRIBAL',
     link: 'mayaLink',
     owner: '1',
 };
@@ -11,14 +11,14 @@ export const mockTattoo: TattooI = {
 export const deleteTattoo: TattooI = {
     id: '2',
     image: 'pepeImage',
-    categories: ['TRIBAL'],
+    categories: 'TRIBAL',
     link: '',
     owner: '',
 };
 
 export const newTattoo: ProtoTattooI = {
     image: 'mayaImage',
-    categories: ['JAPANESE'],
+    categories: 'JAPANESE',
     link: 'mayaLink',
     owner: '',
 };
@@ -26,7 +26,7 @@ export const newTattoo: ProtoTattooI = {
 export const updateTattoo: TattooI = {
     id: '1',
     image: 'mayaImage',
-    categories: ['REALISM'],
+    categories: 'REALISM',
     link: 'mayaLink',
     owner: '',
 };
