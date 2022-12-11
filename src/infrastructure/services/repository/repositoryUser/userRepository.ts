@@ -66,7 +66,7 @@ export class UserRepository implements RepoUser<UserI> {
     addTattoosFavorites(id: string): Promise<UserI> {
         return fetch(`${this.url}/addTattooFavorites`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
+            body: JSON.stringify({ id }),
             headers: {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -76,7 +76,6 @@ export class UserRepository implements RepoUser<UserI> {
                 console.log('Error mu grande', response);
                 throw this.createError(response);
             }
-            console.log(response.json());
             return response.json();
         });
     }
@@ -84,13 +83,14 @@ export class UserRepository implements RepoUser<UserI> {
     deleteTattoosFavorites(id: string): Promise<UserI> {
         return fetch(`${this.url}/deleteTattooFavorites`, {
             method: 'PATCH',
-            body: JSON.stringify(id),
+            body: JSON.stringify({ id }),
             headers: {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {
+                console.log('porque', response);
                 throw this.createError(response);
             }
             return response.json();

@@ -6,7 +6,6 @@ export function FavoritesButton({ id }: { id: string }) {
 
     const handleAddClick = (event: SyntheticEvent) => {
         event.preventDefault();
-        console.log('HEEEEY SOY UN FAVORITO', { id });
         handleAddFavorites(id);
     };
 

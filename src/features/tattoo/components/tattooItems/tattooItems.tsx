@@ -1,5 +1,5 @@
 import { TattooI } from '../../../../infrastructure/types/typesTattoos/typesTattoos';
-import { DeleteTattooButton } from '../tattooButtons/deleteFavoritesButton/deleteButton';
+import { DeleteFavoriteButton } from '../tattooButtons/deleteFavoritesButton/deleteFavoriteButton';
 import { FavoritesButton } from '../tattooButtons/favoritesButton/favoritesButton';
 
 export function TattooItem({ item }: { item: TattooI }) {
@@ -13,7 +13,7 @@ export function TattooItem({ item }: { item: TattooI }) {
                     <FavoritesButton id={item.id}></FavoritesButton>
                 </div>
                 <div>
-                    <DeleteTattooButton id={item.id}></DeleteTattooButton>
+                    <DeleteFavoriteButton id={item.id}></DeleteFavoriteButton>
                 </div>
                 <div>
                     <button></button>

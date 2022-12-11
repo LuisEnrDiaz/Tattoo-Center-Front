@@ -23,7 +23,15 @@ export const useUser = () => {
             .then((user) => dispatcher(action.addFavoritesActionCreator(user)));
     };
 
-    const handleDelete = ({ id }: { id: string }) => {
+    const handleDeleteFavorites = (id: string) => {
+        serviceUser
+            .deleteTattoosFavorites(id)
+            .then((user) =>
+                dispatcher(action.deleteFavoritesActionCreator(user))
+            );
+    };
+
+    const handleDelete = (id: string) => {
         serviceUser
             .deleteUser(id)
             .then(() => dispatcher(action.deleteActionCreator(id)));
@@ -33,6 +41,7 @@ export const useUser = () => {
         users,
         handleLogin,
         handleAddFavorites,
+        handleDeleteFavorites,
         handleDelete,
     };
 };
