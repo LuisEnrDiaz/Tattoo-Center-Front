@@ -16,17 +16,12 @@ export function TattooForm() {
     const handleForm = (event: SyntheticEvent) => {
         const element = event.target as HTMLFormElement;
         setValue({ ...value, [element.name]: element.value });
-        console.log('prueba');
     };
 
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
 
         const tattoo = await tattooServices.create(value);
-        console.log(
-            '🚀 ~ file: tattooForm.tsx:26 ~ handleSubmit ~ user',
-            tattoo
-        );
 
         return tattoo;
     };

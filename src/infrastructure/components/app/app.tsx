@@ -1,25 +1,12 @@
-import TattooPage from '../../../features/tattoo/tattooPage/tattooPage';
-import { UserRepository } from '../../services/repository/repositoryUser/userRepository';
-import { Footer } from '../footer/footer';
-import { Header } from '../header/header';
-
-// const prueba = async () => {
-//     const repo = new UserRepository();
-//     const user = {
-//         name: 'lorenzo',
-//         password: '123456789',
-//     };
-//     const test = await repo.login(user);
-//     console.log(test);
-// };
-// prueba();
+import { Layout } from '../layout/layout';
+import { AppRoutes } from '../routes/appRoutes';
 
 function App() {
     return (
         <>
-            <Header></Header>
-            <TattooPage></TattooPage>
-            <Footer></Footer>
+            <Layout>
+                <AppRoutes></AppRoutes>
+            </Layout>
         </>
     );
 }

@@ -1,10 +1,11 @@
+import { Menu } from '../menu/menu';
 import style from './header.module.css';
 
 export function Header() {
     const title = 'TATTOO CENTER';
     return (
-        <header>
-            <div className={style.container}>
+        <header className={style.container}>
+            <div className={style.container_logo}>
                 <img
                     className={style.logo}
                     src="./assets/Logo.png"
@@ -15,8 +16,9 @@ export function Header() {
                     <h1>{title}</h1>
                 </div>
             </div>
-
-            <div></div>
+            <div>
+                <Menu></Menu>
+            </div>
         </header>
     );
 }

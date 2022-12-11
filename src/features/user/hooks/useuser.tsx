@@ -12,7 +12,7 @@ export const useUser = () => {
     const handleLogin = (user: Partial<UserI>) => {
         serviceUser
             .login(user)
-            .then((response: string) =>
+            .then((response) =>
                 dispatcher(action.loginActionCreator(response))
             );
     };
@@ -23,9 +23,16 @@ export const useUser = () => {
             .then((user) => dispatcher(action.addFavoritesActionCreator(user)));
     };
 
+    const handleDelete = ({ id }: { id: string }) => {
+        serviceUser
+            .deleteUser(id)
+            .then(() => dispatcher(action.deleteActionCreator(id)));
+    };
+
     return {
         users,
         handleLogin,
         handleAddFavorites,
+        handleDelete,
     };
 };

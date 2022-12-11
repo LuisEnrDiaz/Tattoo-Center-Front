@@ -82,17 +82,11 @@ describe('Given UserRepository', () => {
             expect(result).toEqual(mockUser);
         });
 
-        test('Then register should return error', async () => {
+        test('Then deleteTattoosFavorite should return error', async () => {
             global.fetch = jest.fn().mockResolvedValue(response);
-            const error = service.createError(
-                new Response('Error', {
-                    status: 400,
-                    statusText: 'error',
-                })
-            );
-            await service.register(mockUser);
-            expect(fetch).toHaveBeenCalled();
-            expect(error).toBeInstanceOf(Error);
+            await expect(
+                async () => await service.register(mockUser)
+            ).rejects.toThrow();
         });
     });
 
@@ -132,17 +126,11 @@ describe('Given UserRepository', () => {
             expect(result).toEqual(mockUser);
         });
 
-        test('Then v should return error', async () => {
+        test('Then deleteTattoosFavorite should return error', async () => {
             global.fetch = jest.fn().mockResolvedValue(response);
-            const error = service.createError(
-                new Response('Error', {
-                    status: 400,
-                    statusText: 'error',
-                })
-            );
-            await service.deleteTattoosFavorites(mockUser.id);
-            expect(fetch).toHaveBeenCalled();
-            expect(error).toBeInstanceOf(Error);
+            await expect(
+                async () => await service.deleteTattoosFavorites('')
+            ).rejects.toThrow();
         });
     });
 
@@ -159,15 +147,9 @@ describe('Given UserRepository', () => {
 
         test('Then deleteUser should return error', async () => {
             global.fetch = jest.fn().mockResolvedValue(response);
-            const error = service.createError(
-                new Response('Error', {
-                    status: 400,
-                    statusText: 'error',
-                })
-            );
-            await service.deleteUser(mockUser.id);
-            expect(fetch).toHaveBeenCalled();
-            expect(error).toBeInstanceOf(Error);
+            await expect(
+                async () => await service.deleteUser('')
+            ).rejects.toThrow();
         });
     });
 });

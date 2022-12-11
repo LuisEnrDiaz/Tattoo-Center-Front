@@ -1,16 +1,18 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter as Router } from 'react-router-dom';
-import { Header } from './header';
+import { Layout } from './layout';
 
-describe('Given Header component', () => {
+describe('Given Layout component', () => {
     describe('When we render the component', () => {
-        test('Then it should display "TATTOO CENTER"', () => {
+        test('Then it should display "Testing"', () => {
             render(
                 <Router>
-                    <Header />
+                    <Layout>
+                        <p>Testing</p>
+                    </Layout>
                 </Router>
             );
-            const element = screen.getByText(/TATTOO CENTER/i);
+            const element = screen.getByText(/Testing/i);
             expect(element).toBeInTheDocument();
         });
     });

@@ -1,14 +1,14 @@
 import { SyntheticEvent, useState } from 'react';
-
+import style from './login.module.css';
 import { useUser } from '../user/hooks/useuser';
 
-export function Login() {
+function Login() {
     const initialState = {
         name: '',
         password: '',
     };
 
-    const { handleLogin, users } = useUser();
+    const { handleLogin } = useUser();
     const [value, setValue] = useState(initialState);
 
     const handleForm = (event: SyntheticEvent) => {
@@ -19,31 +19,33 @@ export function Login() {
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
         await handleLogin(value);
-        console.log(users.token);
-        localStorage.setItem('token', users.token);
     };
 
     return (
-        <>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <input
-                        type="text"
-                        name="name"
-                        value={value.name}
-                        onInput={handleForm}
-                    />
-                </div>
-                <div>
-                    <input
-                        type="password"
-                        name="password"
-                        value={value.password}
-                        onInput={handleForm}
-                    />
-                </div>
-                <button type="submit">LOGIN</button>
-            </form>
-        </>
+        <main className={style.background}>
+            <div>
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <input
+                            type="text"
+                            name="name"
+                            value={value.name}
+                            onInput={handleForm}
+                        />
+                    </div>
+                    <div>
+                        <input
+                            type="password"
+                            name="password"
+                            value={value.password}
+                            onInput={handleForm}
+                        />
+                    </div>
+                    <button type="submit">LOGIN</button>
+                </form>
+            </div>
+        </main>
     );
 }
+
+export default Login;

@@ -20,7 +20,8 @@ export const userReducer = createReducer(initialState, (builder) => {
     builder.addCase(action.loginActionCreator, (state, action) => ({
         ...state,
         isLogged: true,
-        token: action.payload,
+        user: action.payload.user,
+        token: action.payload.token,
     }));
 
     builder.addCase(
@@ -28,20 +29,24 @@ export const userReducer = createReducer(initialState, (builder) => {
         (state, action) => action.payload
     );
 
-    builder.addCase(action.addFavoritesActionCreator, (state, action) => ({
-        ...state,
-        isLogged: true,
-        user: action.payload,
-    }));
+    builder.addCase(action.addFavoritesActionCreator, (state, action) => {
+        console.log({ state });
+        return {
+            ...state,
+            user: {
+                ...state.user,
+                favPlaces: [...(state.user as UserI).favorites, action.payload],
+            } as UserI,
+        };
+    });
 
     builder.addCase(action.deleteFavoritesActionCreator, (state, action) => ({
         ...state,
-        isLogged: true,
         user: action.payload,
     }));
 
-    // builder.addCase(action.deleteUserActionCreator, (state,action) => (
-    // ));
+    // builder.addCase(action.deleteActionCreator, (state, action) =>
+    // );
 
     builder.addDefaultCase((state) => state);
 });

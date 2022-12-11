@@ -12,18 +12,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    min-width: 7rem;
+    min-height: 7rem;
 }
 
 .logo {
     background-color: #262525;
     /* max-height: 13rem; */
-    max-width: 13rem;
+    max-width: 10rem;
+
     padding: 1rem;
 }
 
 .container_copyright {
     display: flex;
     align-items: center;
+    min-width: 1rem;
 }
 
 .copyright {
@@ -34,7 +38,6 @@
 .copyright_text {
     padding: 10px;
     font-size: 0.8rem;
-
     color: #b2b2b2;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }

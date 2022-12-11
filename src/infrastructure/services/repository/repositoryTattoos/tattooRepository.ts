@@ -49,6 +49,7 @@ export class TattooRepository implements Repository<TattooI> {
             body: JSON.stringify(item),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {
@@ -82,6 +83,7 @@ export class TattooRepository implements Repository<TattooI> {
             },
         }).then((response) => {
             if (!response.ok) {
+                console.log('error', response);
                 throw this.createError(response);
             }
             return response.json();

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react';
+import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../reducerTattoo/actionCreator';
 import { TattooRepository } from '../../../infrastructure/services/repository/repositoryTattoos/tattooRepository';
@@ -14,7 +14,7 @@ export const useTattoo = () => {
     const dispatcher = useDispatch();
     const tattoosCenter = useMemo(() => new TattooRepository(), []);
 
-    useEffect(() => {
+    const handleLoad = useCallback(() => {
         tattoosCenter
             .getAll()
             .then((tattoos) => dispatcher(action.loadActionCreator(tattoos)))
@@ -48,6 +48,7 @@ export const useTattoo = () => {
 
     return {
         tattoos,
+        handleLoad,
         handleCreate,
         handleDelete,
         handleUpdate,

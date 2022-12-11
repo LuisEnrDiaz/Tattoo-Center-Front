@@ -1,5 +1,5 @@
 import { RepoUser } from '../../../model/interfaces/interfaceUser/repositoryUser';
-import { UserI } from '../../../types/typesUsers/typesUsers';
+import { LoginUser, UserI } from '../../../types/typesUsers/typesUsers';
 
 export class UserRepository implements RepoUser<UserI> {
     url: string;
@@ -30,7 +30,7 @@ export class UserRepository implements RepoUser<UserI> {
         });
     }
 
-    login(user: Partial<UserI>): Promise<string> {
+    login(user: Partial<UserI>): Promise<LoginUser> {
         return fetch(`${this.url}/login`, {
             method: 'POST',
             body: JSON.stringify(user),
@@ -39,7 +39,10 @@ export class UserRepository implements RepoUser<UserI> {
             },
         })
             .then((response) => response.json())
-            .then((response) => response.token)
+            .then((response) => {
+                localStorage.setItem('token', response.token);
+                return response;
+            })
             .catch((error) => {
                 return error;
             });
@@ -52,11 +55,12 @@ export class UserRepository implements RepoUser<UserI> {
             headers: {
                 'Content-type': 'application/json',
             },
-        })
-            .then((response) => response.json())
-            .catch((error) => {
-                return error;
-            });
+        }).then((response) => {
+            if (!response.ok) {
+                throw this.createError(response);
+            }
+            return response.json();
+        });
     }
 
     addTattoosFavorites(id: string): Promise<UserI> {
@@ -67,11 +71,14 @@ export class UserRepository implements RepoUser<UserI> {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-        })
-            .then((response) => response.json())
-            .catch((error) => {
-                return error;
-            });
+        }).then((response) => {
+            if (!response.ok) {
+                console.log('Error mu grande', response);
+                throw this.createError(response);
+            }
+            console.log(response.json());
+            return response.json();
+        });
     }
 
     deleteTattoosFavorites(id: string): Promise<UserI> {
@@ -82,11 +89,12 @@ export class UserRepository implements RepoUser<UserI> {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-        })
-            .then((response) => response.json())
-            .catch((error) => {
-                return error;
-            });
+        }).then((response) => {
+            if (!response.ok) {
+                throw this.createError(response);
+            }
+            return response.json();
+        });
     }
 
     deleteUser(id: string): Promise<void> {
@@ -97,10 +105,11 @@ export class UserRepository implements RepoUser<UserI> {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
-        })
-            .then((response) => response.json())
-            .catch((error) => {
-                return error;
-            });
+        }).then((response) => {
+            if (!response.ok) {
+                throw this.createError(response);
+            }
+            return response.json();
+        });
     }
 }

@@ -1,9 +1,13 @@
+import { useEffect } from 'react';
 import { TattooI } from '../../../../infrastructure/types/typesTattoos/typesTattoos';
 import { useTattoo } from '../../hooks/usetattoo';
 import { TattooItem } from '../tattooItems/tattooItems';
 
 export function TattooList() {
-    const { tattoos } = useTattoo();
+    const { tattoos, handleLoad } = useTattoo();
+    useEffect(() => {
+        handleLoad();
+    }, [handleLoad]);
 
     return (
         <div>

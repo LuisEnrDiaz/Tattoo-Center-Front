@@ -2,7 +2,7 @@ import { SyntheticEvent, useState } from 'react';
 import { UserRepository } from '../../infrastructure/services/repository/repositoryUser/userRepository';
 import { ProtoUserI } from '../../infrastructure/types/typesUsers/typesUsers';
 
-export function Register() {
+function Register() {
     const userServices = new UserRepository();
 
     const initialState: ProtoUserI = {
@@ -76,3 +76,5 @@ export function Register() {
         </form>
     );
 }
+
+export default Register;

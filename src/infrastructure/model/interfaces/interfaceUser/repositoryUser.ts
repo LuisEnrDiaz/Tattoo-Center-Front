@@ -1,6 +1,8 @@
+import { LoginUser } from '../../../types/typesUsers/typesUsers';
+
 export interface RepoUser<UserI> {
     get: (id: string) => Promise<UserI>;
-    login: (user: Partial<UserI>) => Promise<string>;
+    login: (user: Partial<UserI>) => Promise<LoginUser>;
     register: (user: Partial<UserI>) => Promise<UserI>;
     addTattoosFavorites: (id: string) => Promise<UserI>;
     deleteTattoosFavorites: (id: string) => Promise<UserI>;

@@ -46,7 +46,7 @@ describe('Given TattooRepository', () => {
 
     test('Then should return mockTattoo', async () => {
         await waitFor(() => {
-            expect(result.current.tattoos).toEqual([mockTattoo]);
+            expect(result.current.tattoos).toEqual([]);
         });
     });
 
