@@ -26,5 +26,5 @@
 
 .container {
     columns: 5 250px;
-    column-gap: 2em;
+    column-gap: 2rem;
 }

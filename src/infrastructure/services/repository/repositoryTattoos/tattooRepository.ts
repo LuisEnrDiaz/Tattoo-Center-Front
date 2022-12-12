@@ -81,6 +81,7 @@ export class TattooRepository implements Repository<TattooI> {
             body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {

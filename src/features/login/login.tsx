@@ -1,6 +1,7 @@
 import { SyntheticEvent, useState } from 'react';
 import style from './login.module.css';
 import { useUser } from '../user/hooks/useuser';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Login() {
     const initialState = {
@@ -10,6 +11,7 @@ function Login() {
 
     const { handleLogin } = useUser();
     const [value, setValue] = useState(initialState);
+    const navigate = useNavigate();
 
     const handleForm = (event: SyntheticEvent) => {
         const element = event.target as HTMLFormElement;
@@ -18,18 +20,21 @@ function Login() {
 
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
+
         await handleLogin(value);
+        navigate('/tattoos');
         setValue(initialState);
     };
 
     return (
-        <div className={`${style.background} ${style.active}`}>
-            <div className={style.container}>
+        <div className={style.background}>
+            <div>
                 <form onSubmit={handleSubmit}>
-                    <div className={style.close}></div>
-                    <div className={style.text}>
-                        <h2>Log in</h2>
-                        <p>welcome back! Log in to your account.</p>
+                    <div>
+                        <h2 className={style.h2}>Log in</h2>
+                        <p className={style.text}>
+                            welcome back! Log in to your account.
+                        </p>
                     </div>
                     <div>
                         <input
@@ -53,15 +58,19 @@ function Login() {
                             onInput={handleForm}
                         />
                     </div>
-                    <div>
+                    <p className={style.text}>
+                        You are not registered yet?
+                        <Link className={style.text_register} to="/register">
+                            Sign up
+                        </Link>
+                    </p>
+                    <div className={style.container_button}>
                         <button className={style.button} type="submit">
                             Log in
                         </button>
                     </div>
                 </form>
             </div>
-
-            <script src="activate.tsx"></script>
         </div>
     );
 }

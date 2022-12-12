@@ -6,6 +6,20 @@
     height: 45rem;
 }
 
+.h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.text {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 50%;
+    margin: 0;
+    padding: 0;
+}
+
 .name {
     height: 40px;
     width: 30rem;
@@ -19,31 +33,30 @@
     opacity: 70%;
 }
 
+.email {
+    height: 40px;
+    width: 30rem;
+    border: none;
+    outline: none;
+    background-color: #fff6da;
+    border-bottom: #0000001a solid;
+    margin: 1rem;
+}
+.email:hover {
+    opacity: 70%;
+}
+
 .password {
     height: 40px;
     width: 30rem;
     border: none;
     outline: none;
-    border-bottom: #0000001a solid;
     background-color: #fff6da;
+    border-bottom: #0000001a solid;
     margin: 1rem;
 }
 .password:hover {
     opacity: 70%;
-}
-
-.h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    margin-top: 0;
-}
-
-.text {
-    font-size: 1rem;
-    font-style: italic;
-    opacity: 50%;
-    margin: 0;
-    padding: 0;
 }
 
 .button {
@@ -70,9 +83,9 @@
     margin: 3rem;
 }
 
-.text_register {
+.text_login {
     padding: 10px;
 }
-.text_register:hover {
+.text_login:hover {
     color: red;
 }
