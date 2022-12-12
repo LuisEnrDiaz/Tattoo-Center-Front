@@ -1,3 +1,5 @@
+import { UserI } from '../../../types/typesUsers/typesUsers';
+
 export interface Repository<TattooI> {
     getAll: () => Promise<Array<TattooI>>;
     get?: (id: string) => Promise<TattooI>;

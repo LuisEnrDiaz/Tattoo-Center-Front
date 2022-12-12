@@ -19,32 +19,50 @@ function Login() {
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
         await handleLogin(value);
+        setValue(initialState);
     };
 
     return (
-        <main className={style.background}>
-            <div>
+        <div className={`${style.background} ${style.active}`}>
+            <div className={style.container}>
                 <form onSubmit={handleSubmit}>
+                    <div className={style.close}></div>
+                    <div className={style.text}>
+                        <h2>Log in</h2>
+                        <p>welcome back! Log in to your account.</p>
+                    </div>
                     <div>
                         <input
+                            className={style.name}
+                            autoComplete="off"
                             type="text"
                             name="name"
                             value={value.name}
+                            placeholder="Username"
                             onInput={handleForm}
                         />
                     </div>
                     <div>
                         <input
+                            className={style.password}
+                            autoComplete="off"
                             type="password"
                             name="password"
                             value={value.password}
+                            placeholder="Password"
                             onInput={handleForm}
                         />
                     </div>
-                    <button type="submit">LOGIN</button>
+                    <div>
+                        <button className={style.button} type="submit">
+                            Log in
+                        </button>
+                    </div>
                 </form>
             </div>
-        </main>
+
+            <script src="activate.tsx"></script>
+        </div>
     );
 }
 

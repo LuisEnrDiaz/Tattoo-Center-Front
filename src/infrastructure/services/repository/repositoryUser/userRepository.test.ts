@@ -101,17 +101,11 @@ describe('Given UserRepository', () => {
             expect(result).toEqual(mockUser);
         });
 
-        test('Then addTattoosFavorites should return error', async () => {
+        test('Then deleteUser should return error', async () => {
             global.fetch = jest.fn().mockResolvedValue(response);
-            const error = service.createError(
-                new Response('Error', {
-                    status: 400,
-                    statusText: 'error',
-                })
-            );
-            await service.addTattoosFavorites(mockUser.id);
-            expect(fetch).toHaveBeenCalled();
-            expect(error).toBeInstanceOf(Error);
+            await expect(
+                async () => await service.addTattoosFavorites('')
+            ).rejects.toThrow();
         });
     });
 

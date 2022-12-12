@@ -1,14 +1,17 @@
 .ul {
     list-style: none;
     display: flex;
+    padding-right: 2rem;
+    margin: 0;
 }
 
 .li {
-    padding: 0.5rem;
-    margin: 0.2rem;
+    padding: 0.7rem;
+    margin: 0;
     justify-content: space-evenly;
     color: #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Arial Black';
+    font-size: 20px;
 }
 
 nav a {

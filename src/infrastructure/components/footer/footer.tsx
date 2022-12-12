@@ -33,10 +33,26 @@ export function Footer() {
                     </div>
                 </div>
                 <div>
-                    <img src="./assets/facebook.png" alt="logo facebook" />
-                    <img src="./assets/instagram.png" alt="logo instagram" />
-                    <img src="./assets/twitter.png" alt="logo twitter" />
-                    <img src="./assets/youtube.png" alt="logo youtube" />
+                    <img
+                        className={style.social}
+                        src="./assets/facebook.png"
+                        alt="logo facebook"
+                    />
+                    <img
+                        className={style.social}
+                        src="./assets/instagram.png"
+                        alt="logo instagram"
+                    />
+                    <img
+                        className={style.social}
+                        src="./assets/twitter.png"
+                        alt="logo twitter"
+                    />
+                    <img
+                        className={style.social}
+                        src="./assets/youtube.png"
+                        alt="logo youtube"
+                    />
                 </div>
             </div>
         </footer>

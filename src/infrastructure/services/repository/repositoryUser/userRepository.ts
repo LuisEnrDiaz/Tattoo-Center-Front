@@ -73,7 +73,6 @@ export class UserRepository implements RepoUser<UserI> {
             },
         }).then((response) => {
             if (!response.ok) {
-                console.log('Error mu grande', response);
                 throw this.createError(response);
             }
             return response.json();
@@ -90,7 +89,6 @@ export class UserRepository implements RepoUser<UserI> {
             },
         }).then((response) => {
             if (!response.ok) {
-                console.log('porque', response);
                 throw this.createError(response);
             }
             return response.json();

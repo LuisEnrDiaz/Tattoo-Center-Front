@@ -44,7 +44,7 @@ describe('Given TattooList', () => {
             );
         });
         test('Then it should display the title', () => {
-            const element = screen.getByText(/BLACK & GREY/i);
+            const element = screen.getByText(/OLD SCHOOL/i);
             expect(element).toBeInTheDocument();
         });
     });

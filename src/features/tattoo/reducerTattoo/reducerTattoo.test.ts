@@ -61,7 +61,7 @@ describe('Given reducerTattoo', () => {
             const state = [deleteTattoo];
             const action = {
                 type: actionTypesTattoo.delete,
-                payload: deleteTattoo.id,
+                payload: [],
             };
 
             test('Then deleteActionCreator return', () => {

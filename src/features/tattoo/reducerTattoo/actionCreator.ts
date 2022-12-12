@@ -14,6 +14,4 @@ export const updateActionCreator = createAction<TattooI>(
     actionTypesTattoo.update
 );
 
-export const deleteActionCreator = createAction<TattooI['id']>(
-    actionTypesTattoo.delete
-);
+export const deleteActionCreator = createAction<void>(actionTypesTattoo.delete);

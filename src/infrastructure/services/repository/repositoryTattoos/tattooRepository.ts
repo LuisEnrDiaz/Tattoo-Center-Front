@@ -1,5 +1,6 @@
 import { TattooI } from '../../../types/typesTattoos/typesTattoos';
 import { Repository } from '../../../model/interfaces/interfaceTattoo/repository';
+import { UserI } from '../../../types/typesUsers/typesUsers';
 
 export class TattooRepository implements Repository<TattooI> {
     url: string;

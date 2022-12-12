@@ -20,6 +20,7 @@ describe('Given TattooRepository', () => {
             handleCreate: (newTattoo: TattooI) => void;
             handleUpdate: (updateTattoo: Partial<TattooI>) => void;
             handleDelete: (id: string) => void;
+            handleLoad: () => void;
         };
     };
 
@@ -33,9 +34,7 @@ describe('Given TattooRepository', () => {
         TattooRepository.prototype.update = jest
             .fn()
             .mockResolvedValue(updateTattoo);
-        TattooRepository.prototype.delete = jest
-            .fn()
-            .mockResolvedValue(mockTattoo);
+        TattooRepository.prototype.delete = jest.fn().mockResolvedValue([]);
 
         const wrapper = ({ children }: { children: JSX.Element }) => (
             <Provider store={appStore}>{children}</Provider>
@@ -48,6 +47,12 @@ describe('Given TattooRepository', () => {
         await waitFor(() => {
             expect(result.current.tattoos).toEqual([]);
         });
+    });
+
+    test(`Then hook call to the repository for the initial data
+                and dispatch an action for load the data in the state`, async () => {
+        result.current.handleLoad();
+        expect(TattooRepository.prototype.getAll).toHaveBeenCalled();
     });
 
     describe('Given handleCreate is called', () => {
@@ -85,7 +90,7 @@ describe('Given TattooRepository', () => {
         test('Then handleDelete return', async () => {
             await waitFor(() => {
                 result.current.handleDelete(mockTattoo.id);
-                expect(result.current.tattoos.at(-1)).toEqual(undefined);
+                expect(result.current.tattoos.at(-1)).toEqual([]);
             });
             await waitFor(() => {
                 expect(TattooRepository.prototype.delete).toHaveBeenCalled();

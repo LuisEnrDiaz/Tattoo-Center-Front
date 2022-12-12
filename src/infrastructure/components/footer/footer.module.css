@@ -1,10 +1,10 @@
 .container {
-    display: flex;
     background-color: #262525;
-    min-height: 5rem;
-    max-height: 20rem;
+    display: flex;
     align-items: center;
     justify-content: space-evenly;
+    max-height: 45vh;
+    min-height: 45vh;
     padding: 1rem;
 }
 
@@ -12,34 +12,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 7rem;
-    min-height: 7rem;
 }
 
 .logo {
-    background-color: #262525;
-    /* max-height: 13rem; */
-    max-width: 10rem;
-
-    padding: 1rem;
+    max-width: 25vh;
+    width: 20vw;
 }
 
 .container_copyright {
     display: flex;
     align-items: center;
-    min-width: 1rem;
+    padding-top: 4vh;
 }
 
 .copyright {
-    max-width: 20px;
-    max-height: 20px;
+    max-width: 1.5vw;
+    max-height: 2vh;
 }
 
 .copyright_text {
-    padding: 10px;
-    font-size: 0.8rem;
     color: #b2b2b2;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Arial Black';
+    font-size: 12px;
+    padding-left: 1vw;
 }
 
 .container_email {
@@ -48,14 +43,18 @@
 }
 
 .email {
-    max-width: 30px;
-    max-height: 30px;
+    max-width: 4vw;
+    max-height: 3vh;
 }
 
 .email_text {
-    padding: 10px;
-    font-size: 1rem;
-    font-size: larger;
     color: #ffffff;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: 'Arial Black';
+    font-size: 15px;
+    padding-left: 0.8rem;
+}
+
+.social {
+    max-width: 4vw;
+    min-width: 3vw;
 }

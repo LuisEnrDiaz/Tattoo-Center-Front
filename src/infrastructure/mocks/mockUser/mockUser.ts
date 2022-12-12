@@ -1,4 +1,5 @@
 import { ProtoUserI, UserI } from '../../types/typesUsers/typesUsers';
+import { mockTattoo } from '../mockTattoo/mockTattoo';
 
 export const mockUser: UserI = {
     id: '1',
@@ -18,6 +19,17 @@ export const newUser: ProtoUserI = {
     image: 'pepeImage',
     favorites: ['2'],
     portfolio: ['2'],
+    description: 'hola',
+};
+
+export const userFav = {
+    id: '1',
+    name: 'pepe',
+    email: 'pepe@gmail',
+    password: '123',
+    image: 'pepeImage',
+    favorites: [mockTattoo.id],
+    portfolio: [mockTattoo.id],
     description: 'hola',
 };
 
