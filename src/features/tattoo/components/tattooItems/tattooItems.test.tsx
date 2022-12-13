@@ -44,7 +44,7 @@ describe('Given RobotList component', () => {
         );
     });
     test('Then it should display the tattoo Categories name', () => {
-        const element = screen.getByText(/TRIBAL/i);
+        const element = screen.getByText(/ELIMINAR/i);
         expect(element).toBeInTheDocument();
     });
 });

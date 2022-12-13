@@ -1,6 +1,6 @@
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import {
     rootState,
     rootStore,
@@ -8,6 +8,7 @@ import {
 import { tattooReducer } from '../../reducerTattoo/reducerTattoo';
 import { TattooForm } from './tattooForm';
 import { userReducer } from '../../../user/reducerUser/reducerUser';
+import { MemoryRouter as Router } from 'react-router-dom';
 
 describe('Given RobotList component', () => {
     const preloadedState: rootState = {
@@ -37,13 +38,15 @@ describe('Given RobotList component', () => {
 
     describe('When we render the component', () => {
         render(
-            <Provider store={mockStore}>
-                <TattooForm />
-            </Provider>
+            <Router>
+                <Provider store={mockStore}>
+                    <TattooForm />
+                </Provider>
+            </Router>
         );
-    });
-    test('Then it should display the tattoo Categories name', () => {
-        const element = screen.getByText(/CATEGORIES/i);
-        expect(element).toBeInTheDocument();
+        test('Then it should display the tattoo Categories name', () => {
+            const element = screen.getByText(/CATEGORIES/i);
+            expect(element).toBeInTheDocument();
+        });
     });
 });

@@ -25,7 +25,7 @@ describe('Given UserRepository', () => {
             handleLogin: (user: Partial<UserI>) => void;
             handleAddFavorites: (id: string) => void;
             handleDeleteFavorites: (id: string) => void;
-            handleDelete: (id: string) => void;
+            // handleDelete: (id: string) => void;
         };
     };
 

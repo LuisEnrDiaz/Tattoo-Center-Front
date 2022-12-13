@@ -5,20 +5,20 @@ export const mockUser: UserI = {
     id: '1',
     name: 'maya',
     email: 'maya@gmail',
-    password: '123',
+    password: 'pass',
     image: 'mayaImage',
-    favorites: ['2'],
-    portfolio: ['2'],
+    favorites: [mockTattoo],
+    portfolio: [mockTattoo],
     description: 'hola',
 };
 
 export const newUser: ProtoUserI = {
     name: 'pepe',
     email: 'pepe@gmail',
-    password: '123',
+    password: 'pass',
     image: 'pepeImage',
-    favorites: ['2'],
-    portfolio: ['2'],
+    favorites: [mockTattoo],
+    portfolio: [mockTattoo],
     description: 'hola',
 };
 
@@ -26,10 +26,10 @@ export const userFav = {
     id: '1',
     name: 'pepe',
     email: 'pepe@gmail',
-    password: '123',
+    password: 'pass',
     image: 'pepeImage',
-    favorites: [mockTattoo.id],
-    portfolio: [mockTattoo.id],
+    favorites: [mockTattoo],
+    portfolio: [mockTattoo],
     description: 'hola',
 };
 
@@ -37,10 +37,10 @@ export const updateUser: UserI = {
     id: '1',
     name: 'coco',
     email: 'coco@gamil',
-    password: '123',
+    password: 'pass',
     image: 'cocoImage',
-    favorites: ['1'],
-    portfolio: ['1'],
+    favorites: [mockTattoo],
+    portfolio: [mockTattoo],
     description: 'hola',
 };
 

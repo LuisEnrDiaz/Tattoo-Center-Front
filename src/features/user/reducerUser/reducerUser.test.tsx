@@ -1,17 +1,10 @@
-import { useDispatch } from 'react-redux';
-import {
-    mockTattoo,
-    mockTattoo2,
-} from '../../../infrastructure/mocks/mockTattoo/mockTattoo';
+import { mockTattoo } from '../../../infrastructure/mocks/mockTattoo/mockTattoo';
 import {
     mockToken,
     mockUser,
     userFav,
 } from '../../../infrastructure/mocks/mockUser/mockUser';
-import { UserRepository } from '../../../infrastructure/services/repository/repositoryUser/userRepository';
-import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
 import { UserI } from '../../../infrastructure/types/typesUsers/typesUsers';
-import { actionTypesTattoo } from '../../tattoo/reducerTattoo/actionTypes';
 import { actionTypesUser } from './actionTypes';
 import { userReducer } from './reducerUser';
 

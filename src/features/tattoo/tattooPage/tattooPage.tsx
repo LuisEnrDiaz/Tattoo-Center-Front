@@ -3,9 +3,11 @@ import { TattooList } from '../components/tattooList/tattooList';
 
 function TattooPage() {
     return (
-        <main className={style.container}>
-            <TattooList></TattooList>
-        </main>
+        <>
+            <main className={style.container}>
+                <TattooList></TattooList>
+            </main>
+        </>
     );
 }
 

@@ -1,5 +1,6 @@
 import { createAction } from '@reduxjs/toolkit';
 import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos';
+import { UserI } from '../../../infrastructure/types/typesUsers/typesUsers';
 import { actionTypesTattoo } from './actionTypes';
 
 export const loadActionCreator = createAction<Array<TattooI>>(
@@ -14,4 +15,6 @@ export const updateActionCreator = createAction<TattooI>(
     actionTypesTattoo.update
 );
 
-export const deleteActionCreator = createAction<void>(actionTypesTattoo.delete);
+export const deleteActionCreator = createAction<UserI>(
+    actionTypesTattoo.delete
+);

@@ -73,16 +73,16 @@ function Register() {
                             required
                         />
                     </div>
-                    <div>
-                        {/* <input type="file" name="" id="" /> */}
-                        {/* <input
+                    {/* <div> */}
+                    {/* <input type="file" name="" id="" /> */}
+                    {/* <input
                             type="image"
                             src=""
                             alt=""
                             placeholder="Password"
                         /> */}
-                    </div>
-                    <div>
+                    {/* </div> */}
+                    {/* <div>
                         <input
                             className={style.name}
                             type="text"
@@ -91,7 +91,7 @@ function Register() {
                             onInput={handleForm}
                             placeholder="Description"
                         />
-                    </div>
+                    </div> */}
                     <p className={style.text}>
                         Are you already registered?
                         <Link className={style.text_login} to="/login">

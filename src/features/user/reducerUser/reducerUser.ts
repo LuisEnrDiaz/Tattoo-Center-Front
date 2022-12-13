@@ -38,7 +38,6 @@ export const userReducer = createReducer(initialState, (builder) => {
 
     builder.addCase(action.deleteFavoritesActionCreator, (state, action) => ({
         ...state,
-
         user: action.payload,
     }));
 

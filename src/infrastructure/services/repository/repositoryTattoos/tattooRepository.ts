@@ -75,7 +75,7 @@ export class TattooRepository implements Repository<TattooI> {
         });
     }
 
-    delete(id: string): Promise<void> {
+    delete(id: string): Promise<UserI> {
         return fetch(this.url, {
             method: 'DELETE',
             body: JSON.stringify(id),

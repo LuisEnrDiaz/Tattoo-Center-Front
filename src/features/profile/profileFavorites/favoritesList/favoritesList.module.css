@@ -1,0 +1,30 @@
+.ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    height: auto;
+}
+/*
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 2fr 2fr 2fr;
+    justify-items: center;
+    gap: 2rem;
+    width: 100%;
+    margin: 1rem;
+    padding: 0;
+} */
+
+.text {
+    padding: 0;
+    margin: 2rem;
+    font-family: 'Arial Black';
+    font-size: 3rem;
+}
+
+.container {
+    columns: 5 250px;
+    column-gap: 2rem;
+}

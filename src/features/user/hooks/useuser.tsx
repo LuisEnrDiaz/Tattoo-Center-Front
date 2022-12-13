@@ -18,30 +18,30 @@ export const useUser = () => {
     };
 
     const handleAddFavorites = (id: string) => {
-        serviceUser
-            .addTattoosFavorites(id)
-            .then((user) => dispatcher(action.addFavoritesActionCreator(user)));
+        serviceUser.addTattoosFavorites(id).then((user) => {
+            console.log(user);
+            return dispatcher(action.addFavoritesActionCreator(user.user));
+        });
     };
 
     const handleDeleteFavorites = (id: string) => {
-        serviceUser
-            .deleteTattoosFavorites(id)
-            .then((user) =>
-                dispatcher(action.deleteFavoritesActionCreator(user))
-            );
+        serviceUser.deleteTattoosFavorites(id).then((user) => {
+            console.log(user, 'borrar');
+            return dispatcher(action.deleteFavoritesActionCreator(user.user));
+        });
     };
 
-    const handleDelete = (id: string) => {
-        serviceUser
-            .deleteUser(id)
-            .then(() => dispatcher(action.deleteActionCreator(id)));
-    };
+    // const handleDelete = (id: string) => {
+    //     serviceUser
+    //         .deleteUser(id)
+    //         .then(() => dispatcher(action.deleteActionCreator()));
+    // };
 
     return {
         users,
         handleLogin,
         handleAddFavorites,
         handleDeleteFavorites,
-        handleDelete,
+        // handleDelete,
     };
 };

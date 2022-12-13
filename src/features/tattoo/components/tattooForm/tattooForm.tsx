@@ -21,9 +21,7 @@ export function TattooForm() {
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
 
-        const tattoo = await tattooServices.create(value);
-
-        return tattoo;
+        await tattooServices.create(value);
     };
 
     return (

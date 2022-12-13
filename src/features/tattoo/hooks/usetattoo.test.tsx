@@ -55,6 +55,15 @@ describe('Given TattooRepository', () => {
         expect(TattooRepository.prototype.getAll).toHaveBeenCalled();
     });
 
+    test('handleLoad error', async () => {
+        jest.spyOn(global.console, 'log');
+        (TattooRepository.prototype.getAll as jest.Mock).mockRejectedValueOnce(
+            new Error()
+        );
+        await result.current.handleLoad();
+        expect(TattooRepository.prototype.getAll).toHaveBeenCalled();
+    });
+
     describe('Given handleCreate is called', () => {
         test('Then handleCreate return', async () => {
             await waitFor(() => {
@@ -66,11 +75,13 @@ describe('Given TattooRepository', () => {
             });
         });
 
-        test('should first', () => {
-            const error = () => {
-                throw new Error('error');
-            };
-            expect(error).toThrowError();
+        test('handleCreate error', async () => {
+            jest.spyOn(global.console, 'log');
+            (
+                TattooRepository.prototype.create as jest.Mock
+            ).mockRejectedValueOnce(new Error());
+            await result.current.handleCreate(mockTattoo);
+            expect(TattooRepository.prototype.create).toHaveBeenCalled();
         });
     });
 
@@ -84,6 +95,15 @@ describe('Given TattooRepository', () => {
                 expect(TattooRepository.prototype.update).toHaveBeenCalled();
             });
         });
+
+        test('handleUpdate error', async () => {
+            jest.spyOn(global.console, 'log');
+            (
+                TattooRepository.prototype.update as jest.Mock
+            ).mockRejectedValueOnce(new Error());
+            await result.current.handleUpdate(updateTattoo);
+            expect(TattooRepository.prototype.update).toHaveBeenCalled();
+        });
     });
 
     describe('Given handleDelete is Called', () => {
@@ -95,6 +115,15 @@ describe('Given TattooRepository', () => {
             await waitFor(() => {
                 expect(TattooRepository.prototype.delete).toHaveBeenCalled();
             });
+        });
+
+        test('handleDelete error', async () => {
+            jest.spyOn(global.console, 'log');
+            (
+                TattooRepository.prototype.delete as jest.Mock
+            ).mockRejectedValueOnce(new Error());
+            await result.current.handleDelete(mockTattoo.id);
+            expect(TattooRepository.prototype.delete).toHaveBeenCalled();
         });
     });
 });

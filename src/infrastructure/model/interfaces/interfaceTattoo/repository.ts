@@ -5,5 +5,5 @@ export interface Repository<TattooI> {
     get?: (id: string) => Promise<TattooI>;
     create: (item: Partial<TattooI>) => Promise<TattooI>;
     update: (item: Partial<TattooI>) => Promise<TattooI>;
-    delete: (id: string) => Promise<void>;
+    delete: (id: string) => Promise<UserI>;
 }

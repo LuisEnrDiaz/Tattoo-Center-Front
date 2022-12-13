@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { appStore } from '../../../infrastructure/store/store/store';
-import UserPage from './userPage';
+import ProfilePage from './profilePage';
 
 describe('Given TattooPage component', () => {
     describe('When we render the component', () => {
@@ -10,11 +10,11 @@ describe('Given TattooPage component', () => {
             render(
                 <Router>
                     <Provider store={appStore}>
-                        <UserPage />{' '}
+                        <ProfilePage />
                     </Provider>
                 </Router>
             );
-            const element = screen.getByText(/hola/i);
+            const element = screen.getByText(/Profile/i);
             expect(element).toBeInTheDocument();
         });
     });

@@ -16,11 +16,11 @@ export class UserRepository implements RepoUser<UserI> {
     }
 
     get(id: string): Promise<UserI> {
-        return fetch(this.url, {
+        return fetch(`${this.url}/${id}`, {
             method: 'GET',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {
@@ -63,7 +63,7 @@ export class UserRepository implements RepoUser<UserI> {
         });
     }
 
-    addTattoosFavorites(id: string): Promise<UserI> {
+    addTattoosFavorites(id: string): Promise<{ user: UserI }> {
         return fetch(`${this.url}/addTattooFavorites`, {
             method: 'PATCH',
             body: JSON.stringify({ id }),
@@ -79,7 +79,7 @@ export class UserRepository implements RepoUser<UserI> {
         });
     }
 
-    deleteTattoosFavorites(id: string): Promise<UserI> {
+    deleteTattoosFavorites(id: string): Promise<{ user: UserI }> {
         return fetch(`${this.url}/deleteTattooFavorites`, {
             method: 'PATCH',
             body: JSON.stringify({ id }),

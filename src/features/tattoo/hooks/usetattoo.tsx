@@ -42,7 +42,7 @@ export const useTattoo = () => {
     const handleDelete = (id: string) => {
         tattoosCenter
             .delete(id)
-            .then(() => dispatcher(action.deleteActionCreator()))
+            .then((user) => dispatcher(action.deleteActionCreator(user)))
             .catch((error: Error) => console.log(error.name, error.message));
     };
 

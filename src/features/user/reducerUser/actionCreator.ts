@@ -23,6 +23,6 @@ export const deleteFavoritesActionCreator = createAction<UserI>(
     actionTypesUser.deleteFavorites
 );
 
-export const deleteActionCreator = createAction<UserI['id']>(
+export const deleteActionCreator = createAction<UserI>(
     actionTypesUser.deleteUser
 );
