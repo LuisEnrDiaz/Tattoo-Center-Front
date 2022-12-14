@@ -26,10 +26,13 @@ export const userReducer = createReducer(initialState, (builder) => {
         token: action.payload.token,
     }));
 
-    builder.addCase(
-        action.logoutActionCreator,
-        (state, action) => initialState
-    );
+    builder.addCase(action.logoutActionCreator, (state, _action) => ({
+        ...state,
+        isLogging: false,
+        isLogged: false,
+        user: null,
+        token: '',
+    }));
 
     builder.addCase(action.addFavoritesActionCreator, (state, action) => ({
         ...state,

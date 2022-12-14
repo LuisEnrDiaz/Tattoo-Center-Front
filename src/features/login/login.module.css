@@ -47,17 +47,17 @@
 }
 
 .button {
-    background-color: #84f2d6; /* Green */
+    background-color: #84f2d6;
     border-radius: 20px;
-
     width: 20rem;
     border: none;
     color: rgb(0, 0, 0);
-    padding: 15px 32px;
+    padding: 7px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 700;
     cursor: pointer;
 }
 .button:hover {

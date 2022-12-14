@@ -6,7 +6,6 @@ export function DeleteFavoriteButton({ id }: { id: string }) {
 
     const handleAddClick = (event: SyntheticEvent) => {
         event.preventDefault();
-        console.log('dlete', id);
         handleDeleteFavorites(id);
     };
 

@@ -30,9 +30,8 @@ export class TattooRepository implements Repository<TattooI> {
     }
 
     get(id: string): Promise<TattooI> {
-        return fetch(this.url, {
+        return fetch(`${this.url}/${id}`, {
             method: 'GET',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
             },
@@ -85,7 +84,6 @@ export class TattooRepository implements Repository<TattooI> {
             },
         }).then((response) => {
             if (!response.ok) {
-                console.log('error', response);
                 throw this.createError(response);
             }
             return response.json();

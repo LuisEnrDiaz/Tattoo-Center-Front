@@ -5,21 +5,20 @@ import style from './favoritesList.module.css';
 
 export function FavoritesList() {
     const { users } = useUser();
-    console.log((users.user as UserI).favorites, 'FAV');
 
     return (
         <>
-            <h2>Favorites</h2>
+            <h2 className={style.h2}>Favorites</h2>
             {users.user?.favorites ? (
-                <div className={style.container}>
+                <section className={style.container}>
                     {(users.user as UserI).favorites.map((item) => (
                         <ul className={style.ul} key={item.id}>
                             <FavoritesItems item={item}></FavoritesItems>
                         </ul>
                     ))}
-                </div>
+                </section>
             ) : (
-                <p>loading...</p>
+                <h2>loading...</h2>
             )}
         </>
     );

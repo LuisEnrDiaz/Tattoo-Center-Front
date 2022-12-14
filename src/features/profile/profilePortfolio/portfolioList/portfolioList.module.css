@@ -5,17 +5,6 @@
     width: auto;
     height: auto;
 }
-/*
-.container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 2fr 2fr 2fr;
-    justify-items: center;
-    gap: 2rem;
-    width: 100%;
-    margin: 1rem;
-    padding: 0;
-} */
 
 .text {
     padding: 0;
@@ -27,4 +16,10 @@
 .container {
     columns: 5 250px;
     column-gap: 2rem;
+}
+
+.h2 {
+    font-size: 2rem;
+    margin: 0;
+    margin-bottom: 2rem;
 }

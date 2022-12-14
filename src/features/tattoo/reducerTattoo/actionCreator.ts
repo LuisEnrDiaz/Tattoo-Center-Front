@@ -3,6 +3,8 @@ import { TattooI } from '../../../infrastructure/types/typesTattoos/typesTattoos
 import { UserI } from '../../../infrastructure/types/typesUsers/typesUsers';
 import { actionTypesTattoo } from './actionTypes';
 
+export const getActionCreator = createAction<TattooI>(actionTypesTattoo.get);
+
 export const loadActionCreator = createAction<Array<TattooI>>(
     actionTypesTattoo.load
 );

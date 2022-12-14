@@ -17,16 +17,19 @@ export const useUser = () => {
             );
     };
 
+    const handleLogout = () => {
+        dispatcher(action.logoutActionCreator());
+        localStorage.removeItem('token');
+    };
+
     const handleAddFavorites = (id: string) => {
         serviceUser.addTattoosFavorites(id).then((user) => {
-            console.log(user);
             return dispatcher(action.addFavoritesActionCreator(user.user));
         });
     };
 
     const handleDeleteFavorites = (id: string) => {
         serviceUser.deleteTattoosFavorites(id).then((user) => {
-            console.log(user, 'borrar');
             return dispatcher(action.deleteFavoritesActionCreator(user.user));
         });
     };
@@ -42,6 +45,7 @@ export const useUser = () => {
         handleLogin,
         handleAddFavorites,
         handleDeleteFavorites,
+        handleLogout,
         // handleDelete,
     };
 };

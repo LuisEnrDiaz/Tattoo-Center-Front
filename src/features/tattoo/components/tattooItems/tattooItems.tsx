@@ -14,11 +14,6 @@ export function TattooItem({ item }: { item: TattooI }) {
                 src={item.image}
                 alt={item.image}
             ></img>
-
-            {/* <div>
-                <p>{item.categories}</p>
-                <p>{item.link}</p>
-            </div> */}
         </li>
     );
 }

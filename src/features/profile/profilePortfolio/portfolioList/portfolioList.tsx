@@ -8,17 +8,17 @@ export function PortfolioList() {
 
     return (
         <>
-            <h2>Portfolio</h2>
+            <h2 className={style.h2}>Portfolio</h2>
             {users.user?.favorites ? (
-                <div className={style.container}>
+                <section className={style.container}>
                     {(users.user as UserI).portfolio.map((item) => (
                         <ul className={style.ul} key={item.id}>
                             <PortfolioItems item={item}></PortfolioItems>
                         </ul>
                     ))}
-                </div>
+                </section>
             ) : (
-                <p>loading...</p>
+                <h2>loading...</h2>
             )}
         </>
     );

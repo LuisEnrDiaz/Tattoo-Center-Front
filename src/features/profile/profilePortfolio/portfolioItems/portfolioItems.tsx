@@ -1,5 +1,5 @@
 import { TattooI } from '../../../../infrastructure/types/typesTattoos/typesTattoos';
-import { DeleteFavoriteButton } from '../../../tattoo/components/tattooButtons/deleteFavoritesButton/deleteFavoriteButton';
+import { DeleteButton } from '../../../tattoo/components/tattooButtons/deleteTattoo/deleteTattoo';
 import style from './portfolioItems.module.css';
 
 export function PortfolioItems({ item }: { item: TattooI }) {
@@ -7,7 +7,7 @@ export function PortfolioItems({ item }: { item: TattooI }) {
         <>
             <li className={style.li} key={item.id}>
                 <div className={style.portfolio}>
-                    <DeleteFavoriteButton id={item.id}></DeleteFavoriteButton>
+                    <DeleteButton id={item.id}></DeleteButton>
                 </div>
 
                 <img

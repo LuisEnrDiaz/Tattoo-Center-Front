@@ -1,61 +1,51 @@
-.background {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff6da;
-    height: 45rem;
-}
-
 .h2 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    margin-top: 0;
-}
-
-.text {
-    font-size: 1rem;
-    font-style: italic;
-    opacity: 50%;
+    font-size: 2rem;
     margin: 0;
-    padding: 0;
+    margin-bottom: 2rem;
 }
 
-.name {
+.button_file {
     height: 40px;
-    width: 30rem;
+    font-size: 18px;
+    font-weight: 500;
     border: none;
     outline: none;
     background-color: #fff6da;
     border-bottom: #0000001a solid;
-    margin: 1rem;
+    margin: 2rem;
 }
-.name:hover {
+
+.categories {
+    font-size: 0.9rem;
+}
+
+.select {
+    height: 40px;
+    width: 29rem;
+    border: none;
+    outline: none;
+    background-color: #fff6da;
+    border-bottom: #0000001a solid;
+    margin: 2rem;
+    margin-left: 0.5rem;
+    font-size: 15px;
+    font-weight: 700;
+}
+.select:hover {
     opacity: 70%;
 }
 
-.email {
+.link {
     height: 40px;
-    width: 30rem;
+    width: 37rem;
     border: none;
     outline: none;
     background-color: #fff6da;
     border-bottom: #0000001a solid;
-    margin: 1rem;
+    margin: 2rem;
+    font-size: 17px;
 }
-.email:hover {
-    opacity: 70%;
-}
-
-.password {
-    height: 40px;
-    width: 30rem;
-    border: none;
-    outline: none;
-    background-color: #fff6da;
-    border-bottom: #0000001a solid;
-    margin: 1rem;
-}
-.password:hover {
+.link:hover {
     opacity: 70%;
 }
 
@@ -77,15 +67,8 @@
     opacity: 50%;
 }
 
-.container_button {
+.container {
     display: flex;
-    justify-content: center;
-    margin: 3rem;
-}
-
-.text_login {
-    padding: 10px;
-}
-.text_login:hover {
-    color: red;
+    flex-direction: column;
+    align-items: center;
 }

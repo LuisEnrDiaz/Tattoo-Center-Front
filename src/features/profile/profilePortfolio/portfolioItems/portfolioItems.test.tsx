@@ -5,10 +5,10 @@ import {
     rootState,
     rootStore,
 } from '../../../../infrastructure/store/store/store';
-import { tattooReducer } from '../../reducerTattoo/reducerTattoo';
-import { TattooItem } from './tattooItems';
 import { mockTattoo } from '../../../../infrastructure/mocks/mockTattoo/mockTattoo';
 import { userReducer } from '../../../user/reducerUser/reducerUser';
+import { tattooReducer } from '../../../tattoo/reducerTattoo/reducerTattoo';
+import { PortfolioItems } from './portfolioItems';
 
 describe('Given RobotList component', () => {
     const preloadedState: rootState = {
@@ -39,13 +39,12 @@ describe('Given RobotList component', () => {
     describe('When we render the component', () => {
         render(
             <Provider store={mockStore}>
-                <TattooItem item={mockTattoo} />
+                <PortfolioItems item={mockTattoo} />
             </Provider>
         );
     });
     test('Then it should display the tattoo Categories name', () => {
-        const element = screen.getAllByRole('img');
-        expect(element[1]).toHaveAttribute('src', 'mayaImage');
-        expect(element[1]).toHaveAttribute('alt', 'mayaImage');
+        const element = screen.getAllByText('ELIMINAR');
+        expect(element).toBeTruthy();
     });
 });
