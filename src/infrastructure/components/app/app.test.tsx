@@ -1,3 +1,4 @@
+/* eslint-disable testing-library/no-unnecessary-act */
 import { act, render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './app';
@@ -8,7 +9,6 @@ import { MemoryRouter as Router } from 'react-router-dom';
 describe('Given App component', () => {
     describe('When we render the component', () => {
         beforeEach(async () => {
-            // eslint-disable-next-line testing-library/no-unnecessary-act
             await act(async () => {
                 render(
                     <Provider store={appStore}>

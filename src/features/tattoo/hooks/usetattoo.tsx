@@ -38,19 +38,11 @@ export const useTattoo = () => {
             )
             .catch((error: Error) => console.log(error.name, error.message));
     };
-    // corrigiendo
-    // const handleDelete = (id: string) => {
-    //     tattoosCenter
-    //         .delete(id)
-    //         .then((user) => dispatcher(action.deleteActionCreator(user)))
-    //         .catch((error: Error) => console.log(error.name, error.message));
-    // };
 
     return {
         tattoos,
         handleLoad,
         handleCreate,
-        // handleDelete,
         handleUpdate,
     };
 };

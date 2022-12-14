@@ -44,8 +44,5 @@ export const userReducer = createReducer(initialState, (builder) => {
         user: action.payload,
     }));
 
-    // builder.addCase(action.deleteActionCreator, (state, action) =>
-    // );
-
     builder.addDefaultCase((state) => state);
 });

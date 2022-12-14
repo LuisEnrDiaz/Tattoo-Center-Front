@@ -25,7 +25,6 @@ describe('Given UserRepository', () => {
             handleLogin: (user: Partial<UserI>) => void;
             handleAddFavorites: (id: string) => void;
             handleDeleteFavorites: (id: string) => void;
-            // handleDelete: (id: string) => void;
         };
     };
 
@@ -85,11 +84,4 @@ describe('Given UserRepository', () => {
             ).toHaveBeenCalled();
         });
     });
-    // resolviendo errores
-    // describe('When handleDelete is called', () => {
-    //     test('Then should return', async () => {
-    //         await result.current.handleDelete(mockUser.id);
-    //         expect(UserRepository.prototype.deleteUser).toHaveBeenCalled();
-    //     });
-    // });
 });

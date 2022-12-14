@@ -34,18 +34,11 @@ export const useUser = () => {
         });
     };
 
-    // const handleDelete = (id: string) => {
-    //     serviceUser
-    //         .deleteUser(id)
-    //         .then(() => dispatcher(action.deleteActionCreator()));
-    // };
-
     return {
         users,
         handleLogin,
         handleAddFavorites,
         handleDeleteFavorites,
         handleLogout,
-        // handleDelete,
     };
 };

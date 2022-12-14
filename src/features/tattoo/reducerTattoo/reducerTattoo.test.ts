@@ -56,19 +56,6 @@ describe('Given reducerTattoo', () => {
                 expect(result).toEqual([deleteTattoo]);
             });
         });
-        // corrigiendo
-        // describe('When deleteActionCreator is called', () => {
-        //     const state = [deleteTattoo];
-        //     const action = {
-        //         type: actionTypesTattoo.delete,
-        //         payload: [],
-        //     };
-
-        //     test('Then deleteActionCreator return', () => {
-        //         const result = tattooReducer(state, action);
-        //         expect(result).toEqual([]);
-        //     });
-        // });
 
         describe('When addDefaultCase is called', () => {
             test('Then addDefaultCase return', () => {

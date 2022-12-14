@@ -73,25 +73,6 @@ function Register() {
                             required
                         />
                     </div>
-                    {/* <div> */}
-                    {/* <input type="file" name="" id="" /> */}
-                    {/* <input
-                            type="image"
-                            src=""
-                            alt=""
-                            placeholder="Password"
-                        /> */}
-                    {/* </div> */}
-                    {/* <div>
-                        <input
-                            className={style.name}
-                            type="text"
-                            name="description"
-                            value={value.description}
-                            onInput={handleForm}
-                            placeholder="Description"
-                        />
-                    </div> */}
                     <p className={style.text}>
                         Are you already registered?
                         <Link className={style.text_login} to="/login">
