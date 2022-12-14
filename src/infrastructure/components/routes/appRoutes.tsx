@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import Login from '../../../features/login/login';
 import Register from '../../../features/register/register';
 import ProfilePage from '../../../features/profile/profilePage/profilePage';
+import { LogoutBtn } from '../../../features/logout/logout';
 
 const Explore = lazy(
     () => import('../../../features/tattoo/tattooPage/tattooPage')
@@ -18,6 +19,10 @@ export function AppRoutes() {
                 <Route
                     path="/profile"
                     element={<ProfilePage></ProfilePage>}
+                ></Route>
+                <Route
+                    path="/profile"
+                    element={<LogoutBtn></LogoutBtn>}
                 ></Route>
                 <Route path="" element={<Explore></Explore>}></Route>
                 <Route path="*" element={<Navigate replace to="" />}></Route>

@@ -2,12 +2,13 @@ import { Provider } from 'react-redux';
 import { render, screen } from '@testing-library/react';
 import { PortfolioList } from './portfolioList';
 import { mockStore } from '../../../../infrastructure/mocks/mockStore/mockStore';
+import { mockStoreFail } from '../../../../infrastructure/mocks/mockStore/mockStoreFail';
 
 describe('Given TattooList', () => {
-    describe('When we render the component', () => {
+    describe('When we render the component fail', () => {
         beforeEach(() => {
             render(
-                <Provider store={mockStore}>
+                <Provider store={mockStoreFail}>
                     <PortfolioList />
                 </Provider>
             );

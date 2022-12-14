@@ -1,12 +1,21 @@
 import { Link } from 'react-router-dom';
+import { useUser } from '../../../features/user/hooks/useuser';
 import style from './menu.module.css';
 export function Menu() {
-    const menuOptions = [
-        { id: '1', path: '', label: 'Gallery' },
-        { id: '2', path: 'login', label: 'Login' },
-        { id: '3', path: 'register', label: 'Register' },
-        { id: '4', path: 'profile', label: 'Profile' },
-    ];
+    const { users } = useUser();
+    const menuOptions = [{ id: '1', path: '', label: 'Gallery' }];
+
+    if (!users.isLogged) {
+        menuOptions.push(
+            { id: '2', path: 'login', label: 'Login' },
+            { id: '3', path: 'register', label: 'Register' }
+        );
+    } else {
+        menuOptions.push(
+            { id: '4', path: 'profile', label: 'Profile' },
+            { id: '5', path: 'logout', label: 'Logout' }
+        );
+    }
     return (
         <nav>
             <ul className={style.ul}>

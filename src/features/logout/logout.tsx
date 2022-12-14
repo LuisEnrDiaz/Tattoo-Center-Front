@@ -1,12 +1,16 @@
+import { SyntheticEvent } from 'react';
 import { useUser } from '../user/hooks/useuser';
 
 export function LogoutBtn() {
     const { handleLogout } = useUser();
+
+    const handleClick = (event: SyntheticEvent) => {
+        event.preventDefault();
+        handleLogout();
+    };
     return (
         <>
-            <a href="http://localhost:3000/tattoos">
-                <button onClick={handleLogout}>Logout</button>
-            </a>
+            <button onClick={handleClick}>Logout</button>
         </>
     );
 }

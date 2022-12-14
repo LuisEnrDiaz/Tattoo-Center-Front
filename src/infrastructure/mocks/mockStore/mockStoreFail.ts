@@ -2,6 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { tattooReducer } from '../../../features/tattoo/reducerTattoo/reducerTattoo';
 import { userReducer } from '../../../features/user/reducerUser/reducerUser';
 import { rootState, rootStore } from '../../store/store/store';
+import { mockUser } from '../mockUser/mockUser';
 
 const preloadedState: rootState = {
     tattoos: [
@@ -17,11 +18,11 @@ const preloadedState: rootState = {
         isLogged: false,
         isLogging: false,
         token: '',
-        user: null,
+        user: mockUser,
     },
 };
 
-export const mockStore: rootStore = configureStore({
+export const mockStoreFail: rootStore = configureStore({
     reducer: {
         tattoos: tattooReducer,
         users: userReducer,

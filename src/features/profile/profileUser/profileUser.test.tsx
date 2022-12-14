@@ -15,7 +15,7 @@ describe('Given TattooPage component', () => {
                 </Router>
             );
             const element = screen.getAllByRole('button');
-            expect(element[0]).toHaveAccessibleName('Favorites');
+            expect(element[0]).toHaveAccessibleName('Send');
         });
     });
 });

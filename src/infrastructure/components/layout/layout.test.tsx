@@ -1,5 +1,7 @@
 import { render, screen } from '@testing-library/react';
+import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
+import { appStore } from '../../store/store/store';
 import { Layout } from './layout';
 
 describe('Given Layout component', () => {
@@ -7,9 +9,11 @@ describe('Given Layout component', () => {
         test('Then it should display "Testing"', () => {
             render(
                 <Router>
-                    <Layout>
-                        <p>Testing</p>
-                    </Layout>
+                    <Provider store={appStore}>
+                        <Layout>
+                            <p>Testing</p>
+                        </Layout>
+                    </Provider>
                 </Router>
             );
             const element = screen.getByText(/Testing/i);
