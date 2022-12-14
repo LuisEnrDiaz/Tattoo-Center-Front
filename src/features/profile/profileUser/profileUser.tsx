@@ -25,8 +25,8 @@ export const ProfileUser = () => {
             </div>
             <div className={style.options}>
                 <div className={style.favorites}>
-                    {/* <FavoritesList></FavoritesList>
-                    <PortfolioList></PortfolioList> */}{' '}
+                    <FavoritesList></FavoritesList>
+                    <PortfolioList></PortfolioList>
                     <TattooForm></TattooForm>
                 </div>
             </div>
