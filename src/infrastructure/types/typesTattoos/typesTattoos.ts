@@ -1,12 +1,13 @@
 export type TattooI = {
     id: string;
     image: string;
-    categories: Array<Category>;
+    categories: Category;
     link: string;
     owner: string;
 };
 
 export type Category =
+    | ''
     | 'TRADITIONAL'
     | 'Old SCHOOL'
     | 'TRIBAL'
@@ -16,7 +17,7 @@ export type Category =
 
 export type ProtoTattooI = {
     image: string;
-    categories: Array<Category>;
+    categories: Category;
     link: string;
     owner: string;
 };

@@ -1,9 +1,12 @@
-import { Header } from '../header/header';
+import { Layout } from '../layout/layout';
+import { AppRoutes } from '../routes/appRoutes';
 
 function App() {
     return (
         <>
-            <Header></Header>
+            <Layout>
+                <AppRoutes></AppRoutes>
+            </Layout>
         </>
     );
 }

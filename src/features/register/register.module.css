@@ -1,0 +1,91 @@
+.background {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff6da;
+    height: 45rem;
+}
+
+.h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+.text {
+    font-size: 1rem;
+    font-style: italic;
+    opacity: 50%;
+    margin: 0;
+    padding: 0;
+}
+
+.name {
+    height: 40px;
+    width: 30rem;
+    border: none;
+    outline: none;
+    background-color: #fff6da;
+    border-bottom: #0000001a solid;
+    margin: 1rem;
+}
+.name:hover {
+    opacity: 70%;
+}
+
+.email {
+    height: 40px;
+    width: 30rem;
+    border: none;
+    outline: none;
+    background-color: #fff6da;
+    border-bottom: #0000001a solid;
+    margin: 1rem;
+}
+.email:hover {
+    opacity: 70%;
+}
+
+.password {
+    height: 40px;
+    width: 30rem;
+    border: none;
+    outline: none;
+    background-color: #fff6da;
+    border-bottom: #0000001a solid;
+    margin: 1rem;
+}
+.password:hover {
+    opacity: 70%;
+}
+
+.button {
+    background-color: #84f2d6;
+    border-radius: 20px;
+    width: 20rem;
+    border: none;
+    color: rgb(0, 0, 0);
+    padding: 7px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.button:hover {
+    opacity: 50%;
+}
+
+.container_button {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.text_login {
+    padding: 10px;
+}
+.text_login:hover {
+    color: red;
+}

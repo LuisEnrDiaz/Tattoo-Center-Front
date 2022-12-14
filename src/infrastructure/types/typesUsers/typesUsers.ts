@@ -1,11 +1,13 @@
+import { TattooI } from '../typesTattoos/typesTattoos';
+
 export type UserI = {
     id: string;
     name: string;
     email: string;
     password: string;
     image: string;
-    favorites: Array<string>;
-    portfolio: Array<string>;
+    favorites: Array<TattooI>;
+    portfolio: Array<TattooI>;
     description: string;
 };
 
@@ -14,7 +16,9 @@ export type ProtoUserI = {
     email: string;
     password: string;
     image: string;
-    favorites: Array<string>;
-    portfolio: Array<string>;
+    favorites: Array<TattooI>;
+    portfolio: Array<TattooI>;
     description: string;
 };
+
+export type LoginUser = { user: UserI; token: string };

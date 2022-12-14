@@ -1,5 +1,6 @@
 import { TattooI } from '../../../types/typesTattoos/typesTattoos';
 import { Repository } from '../../../model/interfaces/interfaceTattoo/repository';
+import { UserI } from '../../../types/typesUsers/typesUsers';
 
 export class TattooRepository implements Repository<TattooI> {
     url: string;
@@ -18,9 +19,10 @@ export class TattooRepository implements Repository<TattooI> {
     getAll(): Promise<Array<TattooI>> {
         return fetch(this.url)
             .then((response) => {
-                if (response.ok) {
-                    return response.json();
+                if (!response.ok) {
+                    throw this.createError(response);
                 }
+                return response.json();
             })
             .then((data) => {
                 return data.tattoos;
@@ -28,9 +30,8 @@ export class TattooRepository implements Repository<TattooI> {
     }
 
     get(id: string): Promise<TattooI> {
-        return fetch(this.url, {
+        return fetch(`${this.url}/${id}`, {
             method: 'GET',
-            body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
             },
@@ -48,6 +49,7 @@ export class TattooRepository implements Repository<TattooI> {
             body: JSON.stringify(item),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {
@@ -72,12 +74,13 @@ export class TattooRepository implements Repository<TattooI> {
         });
     }
 
-    delete(id: string): Promise<void> {
+    delete(id: string): Promise<UserI> {
         return fetch(this.url, {
             method: 'DELETE',
             body: JSON.stringify(id),
             headers: {
                 'content-type': 'application/json',
+                Authorization: `Bearer ${localStorage.getItem('token')}`,
             },
         }).then((response) => {
             if (!response.ok) {

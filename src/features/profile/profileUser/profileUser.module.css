@@ -1,0 +1,57 @@
+.container {
+    display: flex;
+}
+
+.container_Profile {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #00000045;
+    border-radius: 20px;
+    min-height: 40rem;
+    height: auto;
+    width: 13rem;
+    margin: 1rem;
+}
+.container_File {
+    display: flex;
+    align-items: center;
+    height: 7rem;
+}
+
+.line {
+    border: 0.5px solid #0000002a;
+    margin: 10px;
+}
+
+.description {
+    padding: 20px;
+    font-size: 0.8rem;
+    color: #000000b2;
+}
+
+.options {
+    width: 100%;
+    border: 1px solid #00000045;
+    border-radius: 20px;
+    margin: 1rem;
+}
+
+.file {
+    width: 50px;
+    height: 20;
+    border-radius: 30px;
+    padding: 1rem;
+}
+
+.name {
+    font-size: 'Arial Black';
+    font-size: 1rem;
+    color: #000000c5;
+    width: 6rem;
+}
+
+.favorites {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}

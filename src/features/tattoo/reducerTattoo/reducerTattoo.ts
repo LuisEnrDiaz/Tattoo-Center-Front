@@ -21,9 +21,5 @@ export const tattooReducer = createReducer(initialState, (builder) => {
         )
     );
 
-    builder.addCase(action.deleteActionCreator, (state, action) =>
-        state.filter((item) => item.id !== action.payload)
-    );
-
     builder.addDefaultCase((state) => state);
 });

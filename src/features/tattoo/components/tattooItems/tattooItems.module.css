@@ -1,0 +1,32 @@
+.li {
+    margin: 0;
+    padding: 0;
+}
+.image {
+    outline: 2px;
+    width: 350px;
+    max-width: 100%;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.233) 0px 1px 2px,
+        rgba(0, 0, 0, 0.581) 0px 2px 4px, rgba(0, 0, 0, 0.374) 0px 4px 8px,
+        rgba(0, 0, 0, 0.624) 0px 8px 16px, rgba(255, 8, 8, 0.253) 0px 16px 32px,
+        rgba(0, 0, 0, 0.613) 0px 32px 64px;
+}
+
+.favorites {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.432);
+    border-radius: 10px;
+    height: 150px;
+    width: 291px;
+}
+
+.favorites:hover {
+    opacity: 100%;
+}

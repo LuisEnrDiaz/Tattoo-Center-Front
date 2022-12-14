@@ -5,7 +5,7 @@ import {
 } from '../../../mocks/mockTattoo/mockTattoo';
 import { TattooRepository } from './tattooRepository';
 
-describe('Given RepositoryTattoo', () => {
+describe('Given TattooRepository', () => {
     let service: TattooRepository;
 
     beforeEach(() => {

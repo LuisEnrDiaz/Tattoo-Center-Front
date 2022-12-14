@@ -2,12 +2,11 @@ import { useCallback, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import * as action from '../reducerTattoo/actionCreator';
 import { TattooRepository } from '../../../infrastructure/services/repository/repositoryTattoos/tattooRepository';
-
-import { rootState } from '../../../infrastructure/store/store';
 import {
     ProtoTattooI,
     TattooI,
 } from '../../../infrastructure/types/typesTattoos/typesTattoos';
+import { rootState } from '../../../infrastructure/store/store/store';
 
 export const useTattoo = () => {
     const tattoos = useSelector((state: rootState) => state.tattoos);
@@ -18,9 +17,9 @@ export const useTattoo = () => {
     const handleLoad = useCallback(() => {
         tattoosCenter
             .getAll()
-            .then((tattoo) => dispatcher(action.loadActionCreator(tattoo)))
+            .then((tattoos) => dispatcher(action.loadActionCreator(tattoos)))
             .catch((error: Error) => console.log(error.name, error.message));
-    }, [tattoosCenter, dispatcher]);
+    }, [dispatcher, tattoosCenter]);
 
     const handleCreate = (newTattoo: ProtoTattooI) => {
         tattoosCenter
@@ -40,18 +39,10 @@ export const useTattoo = () => {
             .catch((error: Error) => console.log(error.name, error.message));
     };
 
-    const handleDelete = (id: string) => {
-        tattoosCenter
-            .delete(id)
-            .then(() => dispatcher(action.deleteActionCreator(id)))
-            .catch((error: Error) => console.log(error.name, error.message));
-    };
-
     return {
         tattoos,
         handleLoad,
         handleCreate,
-        handleDelete,
         handleUpdate,
     };
 };
