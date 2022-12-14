@@ -18,7 +18,8 @@ export const useUser = () => {
     };
 
     const handleLogout = () => {
-        dispatcher(action.logoutActionCreator());
+        dispatcher(action.logoutActionCreator(''));
+
         localStorage.removeItem('token');
     };
 
@@ -34,11 +35,19 @@ export const useUser = () => {
         });
     };
 
+    const handleDelete = (id: string) => {
+        console.log(id);
+        serviceUser
+            .deleteUser(id)
+            .then(() => dispatcher(action.deleteActionCreator()));
+    };
+
     return {
         users,
         handleLogin,
         handleAddFavorites,
         handleDeleteFavorites,
         handleLogout,
+        handleDelete,
     };
 };

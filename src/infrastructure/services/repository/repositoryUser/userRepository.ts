@@ -98,7 +98,7 @@ export class UserRepository implements RepoUser<UserI> {
     deleteUser(id: string): Promise<void> {
         return fetch(this.url, {
             method: 'DELETE',
-            body: JSON.stringify(id),
+            body: JSON.stringify({ id }),
             headers: {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,

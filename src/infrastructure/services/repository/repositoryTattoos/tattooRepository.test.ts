@@ -1,3 +1,4 @@
+import { response } from '../../../mocks/mockReponse/mockResponse';
 import {
     mockTattoo,
     newTattoo,
@@ -11,12 +12,6 @@ describe('Given TattooRepository', () => {
     beforeEach(() => {
         service = new TattooRepository();
     });
-
-    const response = {
-        ok: false,
-        status: 400,
-        statusText: 'error',
-    };
 
     describe('When createError is called', () => {
         test('Then should return error', () => {

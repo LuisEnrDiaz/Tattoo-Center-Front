@@ -1,3 +1,4 @@
+import { response } from '../../../mocks/mockReponse/mockResponse';
 import { mockUser } from '../../../mocks/mockUser/mockUser';
 import { UserRepository } from './userRepository';
 
@@ -7,12 +8,6 @@ describe('Given UserRepository', () => {
     beforeEach(() => {
         service = new UserRepository();
     });
-
-    const response = {
-        ok: false,
-        status: 400,
-        statusText: 'error',
-    };
 
     describe('When createError is called', () => {
         test('Then should return error', () => {

@@ -9,5 +9,11 @@ export function DeleteFavoriteButton({ id }: { id: string }) {
         handleDeleteFavorites(id);
     };
 
-    return <button onClick={handleAddClick}>BORRAR</button>;
+    return (
+        <img
+            src="./assets/papelera.png"
+            onClick={handleAddClick}
+            alt="papelera"
+        ></img>
+    );
 }

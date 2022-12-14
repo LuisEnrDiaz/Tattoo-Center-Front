@@ -27,7 +27,7 @@ function Register() {
 
     const handleSubmit = (event: SyntheticEvent) => {
         event.preventDefault();
-        navigate('/tattoos');
+        navigate('/login');
         userServices.register(value);
     };
 

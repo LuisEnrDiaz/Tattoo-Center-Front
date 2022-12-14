@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
@@ -33,6 +33,19 @@ describe('Given NewPlace component', () => {
             );
             const element = screen.getByText(/Send/i);
             expect(element).toBeInTheDocument();
+        });
+
+        test('Then it should click to button', () => {
+            render(
+                <Router>
+                    <Provider store={appStore}>
+                        <TattooForm></TattooForm>
+                    </Provider>
+                </Router>
+            );
+            const button = screen.getByRole('button');
+            fireEvent.click(button);
+            expect(fireEvent.click(button)).toBe(true);
         });
 
         describe('then the user clicks the button', () => {

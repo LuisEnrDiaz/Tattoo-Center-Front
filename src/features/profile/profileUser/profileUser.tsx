@@ -1,4 +1,5 @@
 import { TattooForm } from '../../tattoo/components/tattooForm/tattooForm';
+import { DeleteButtonUser } from '../../user/components/userButtons/deleteButton/deleteButton';
 import { useUser } from '../../user/hooks/useuser';
 import { FavoritesList } from '../profileFavorites/favoritesList/favotitesList';
 import { PortfolioList } from '../profilePortfolio/portfolioList/portfolioList';
@@ -21,6 +22,7 @@ export const ProfileUser = () => {
                 <div className={style.line}></div>
                 <div className={style.description}>
                     <p>{users.user?.description}</p>
+                    <DeleteButtonUser></DeleteButtonUser>
                 </div>
             </div>
             <div className={style.options}>

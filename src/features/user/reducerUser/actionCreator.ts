@@ -13,7 +13,7 @@ export const loginActionCreator = createAction<LoginUser>(
     actionTypesUser.login
 );
 
-export const logoutActionCreator = createAction<void>(actionTypesUser.logout);
+export const logoutActionCreator = createAction<string>(actionTypesUser.logout);
 
 export const addFavoritesActionCreator = createAction<UserI>(
     actionTypesUser.addFavorites
@@ -23,6 +23,6 @@ export const deleteFavoritesActionCreator = createAction<UserI>(
     actionTypesUser.deleteFavorites
 );
 
-export const deleteActionCreator = createAction<UserI>(
+export const deleteActionCreator = createAction<void>(
     actionTypesUser.deleteUser
 );
