@@ -10,6 +10,8 @@ export function TattooItem({ item }: { item: TattooI }) {
             </div>
 
             <img
+                width="320px"
+                height="auto"
                 className={style.image}
                 src={item.image}
                 alt={item.image}

@@ -8,10 +8,8 @@ export function LogoutBtn() {
 
     const handleClick = (event: SyntheticEvent) => {
         localStorage.clear();
-        localStorage.setItem('token', '');
-        global.location.reload();
         handleLogout();
-        navigate('/tattoos');
+        navigate('/login');
     };
     return (
         <>

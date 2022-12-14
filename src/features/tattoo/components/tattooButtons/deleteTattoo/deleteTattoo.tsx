@@ -5,5 +5,7 @@ export function DeleteButton({ id }: { id: string }) {
         event.preventDefault();
     };
 
-    return <button onClick={handleAddClick}>ELIMINAR</button>;
+    return (
+        <img src="./assets/x.png" alt="delete" onClick={handleAddClick}></img>
+    );
 }

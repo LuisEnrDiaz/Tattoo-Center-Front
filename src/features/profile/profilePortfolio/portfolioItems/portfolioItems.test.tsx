@@ -13,7 +13,7 @@ describe('Given RobotList component', () => {
         );
     });
     test('Then it should display the tattoo Categories name', () => {
-        const element = screen.getAllByText('ELIMINAR');
+        const element = screen.getAllByRole('img');
         expect(element).toBeTruthy();
     });
 });

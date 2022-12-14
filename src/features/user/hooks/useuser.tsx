@@ -18,7 +18,7 @@ export const useUser = () => {
     };
 
     const handleLogout = () => {
-        dispatcher(action.logoutActionCreator(''));
+        dispatcher(action.logoutActionCreator());
 
         localStorage.removeItem('token');
     };

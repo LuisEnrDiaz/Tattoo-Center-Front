@@ -20,10 +20,8 @@ export function AppRoutes() {
                     path="/profile"
                     element={<ProfilePage></ProfilePage>}
                 ></Route>
-                <Route
-                    path="/profile"
-                    element={<LogoutBtn></LogoutBtn>}
-                ></Route>
+                <Route path="/logout" element={<LogoutBtn></LogoutBtn>}></Route>
+                <Route path="/DetailPage/:item.id"></Route>
                 <Route path="" element={<Explore></Explore>}></Route>
                 <Route path="*" element={<Navigate replace to="" />}></Route>
             </Routes>

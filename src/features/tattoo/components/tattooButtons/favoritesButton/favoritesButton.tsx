@@ -6,15 +6,17 @@ export function FavoritesButton({ id }: { id: string }) {
 
     const handleAddClick = (event: SyntheticEvent) => {
         event.preventDefault();
-
         handleAddFavorites(id);
     };
 
     return (
-        <img
-            src="./assets/corazon.png"
-            onClick={handleAddClick}
-            alt="corazon"
-        ></img>
+        <>
+            <img
+                src="./assets/corazon.png"
+                onClick={handleAddClick}
+                defaultValue={'false'}
+                alt="corazon"
+            ></img>
+        </>
     );
 }
