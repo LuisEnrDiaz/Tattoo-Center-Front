@@ -50,7 +50,9 @@ export function TattooForm() {
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <h2 className={style.h2}>Create tattoo</h2>
+                <h2 className={style.h2} id="createTattoo">
+                    Create tattoo
+                </h2>
                 <div className={style.container}>
                     <div className={style.container_file}>
                         <input

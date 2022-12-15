@@ -8,7 +8,9 @@ export function FavoritesList() {
 
     return (
         <>
-            <h2 className={style.h2}>Favorites</h2>
+            <h2 className={style.h2} id="favouritesList">
+                Favorites
+            </h2>
             {users.user?.favorites ? (
                 <section className={style.container}>
                     {(users.user as UserI).favorites.map((item) => (
@@ -18,7 +20,7 @@ export function FavoritesList() {
                     ))}
                 </section>
             ) : (
-                <h2>loading...</h2>
+                <h2>You have no Favorites.</h2>
             )}
         </>
     );
