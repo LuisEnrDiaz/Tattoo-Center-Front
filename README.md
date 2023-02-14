@@ -9,6 +9,19 @@ cumple un crud completo:
 - patch
 - delete
 
+---
+
+# Clone el repositorio
+git clone
+
+# Instale las dev
+npm i
+
+# Para el despliegue importante
+npm run start
+
+se abrira en http://localhost:3000
+
 # TATTOO CENTER
 
 [**Diseño en figma de las paginas**](https://www.figma.com/file/vdlESQE81Wlj6pNbhxQa38/Tatto-lucho?node-id=0%3A1&t=VgBoaJhpwXk1qHtb-1)
