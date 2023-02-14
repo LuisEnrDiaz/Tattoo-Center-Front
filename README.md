@@ -3,6 +3,11 @@
 Projecto final de Front-end en ISDI Coders, en este proyecto se llama al Back-end Tattoo-center.
 
 Dos semanas y media para entregar este proyecto, he decidido no tocarlo mas para demostrar lo que he podido hacer con el tiempo establecido.
+cumple un crud completo:
+- get
+- post
+- patch
+- delete
 
 # TATTOO CENTER
 
