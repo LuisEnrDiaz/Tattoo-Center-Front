@@ -5,7 +5,7 @@ export class UserRepository implements RepoUser<UserI> {
     url: string;
 
     constructor() {
-        this.url = 'https://tattoo-center-back-production.up.railway.app/users';
+        this.url = 'http://localhost:7700/users';
     }
 
     createError(response: Response) {
