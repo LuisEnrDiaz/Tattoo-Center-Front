@@ -8,7 +8,9 @@ export function PortfolioList() {
 
     return (
         <>
-            <h2 className={style.h2}>Portfolio</h2>
+            <h2 className={style.h2} id="portfolioList">
+                Portfolio
+            </h2>
             {users.user?.favorites ? (
                 <section className={style.container}>
                     {(users.user as UserI).portfolio.map((item) => (
@@ -18,7 +20,7 @@ export function PortfolioList() {
                     ))}
                 </section>
             ) : (
-                <h2>loading...</h2>
+                <h2>You have not created any tattoos.</h2>
             )}
         </>
     );

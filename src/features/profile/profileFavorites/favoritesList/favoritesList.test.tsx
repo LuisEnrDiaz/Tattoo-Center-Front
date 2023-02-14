@@ -14,7 +14,7 @@ describe('Given TattooList', () => {
             );
         });
         test('Then it should display the title', () => {
-            const element = screen.getByText(/loading/i);
+            const element = screen.getByText(/You have no Favorites./i);
             expect(element).toBeInTheDocument();
         });
     });

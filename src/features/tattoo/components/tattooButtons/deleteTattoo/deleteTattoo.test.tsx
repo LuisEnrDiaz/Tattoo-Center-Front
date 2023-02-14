@@ -14,7 +14,7 @@ describe('Given DeleteButton component', () => {
                     </Provider>
                 </Router>
             );
-            const button = screen.getByRole('button');
+            const button = screen.getByRole('img');
             fireEvent.click(button);
             expect(fireEvent.click(button)).toBe(false);
         });

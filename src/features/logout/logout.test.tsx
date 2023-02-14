@@ -16,6 +16,7 @@ describe('When logged is called', () => {
                 </Provider>
             </>
         );
+
         fireEvent.click(screen.getByRole('button'));
         userEvent.click(await screen.findByText(/Logout/i));
     });

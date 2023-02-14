@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from '@testing-library/react';
 import { Provider } from 'react-redux';
 import { MemoryRouter as Router } from 'react-router-dom';
 import { appStore } from '../../../../../infrastructure/store/store/store';
-import { DeleteFavoriteButton } from './deleteFavoriteButton';
+import { DeleteButtonUser } from './deleteButton';
 
 describe('Given DeleteFavoriteButton component', () => {
     describe('When we render the component', () => {
@@ -10,11 +10,11 @@ describe('Given DeleteFavoriteButton component', () => {
             render(
                 <Router>
                     <Provider store={appStore}>
-                        <DeleteFavoriteButton id={'123'}></DeleteFavoriteButton>
+                        <DeleteButtonUser></DeleteButtonUser>
                     </Provider>
                 </Router>
             );
-            const button = screen.getByRole('img');
+            const button = screen.getByRole('button');
             fireEvent.click(button);
             expect(fireEvent.click(button)).toBe(false);
         });

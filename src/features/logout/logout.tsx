@@ -1,12 +1,15 @@
 import { SyntheticEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from '../user/hooks/useuser';
 
 export function LogoutBtn() {
     const { handleLogout } = useUser();
+    const navigate = useNavigate();
 
     const handleClick = (event: SyntheticEvent) => {
-        event.preventDefault();
+        localStorage.clear();
         handleLogout();
+        navigate('/login');
     };
     return (
         <>

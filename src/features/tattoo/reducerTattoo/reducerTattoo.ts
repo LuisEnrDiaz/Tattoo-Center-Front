@@ -10,6 +10,11 @@ export const tattooReducer = createReducer(initialState, (builder) => {
         (state, action) => action.payload
     );
 
+    builder.addCase(action.getActionCreator, (state, action) => [
+        ...state,
+        action.payload,
+    ]);
+
     builder.addCase(action.createActionCreator, (state, action) => [
         ...state,
         action.payload,

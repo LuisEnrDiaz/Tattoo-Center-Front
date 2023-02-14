@@ -13,8 +13,8 @@ describe('Given RobotList component', () => {
         );
     });
     test('Then it should display the tattoo Categories name', () => {
-        const element = screen.getByRole('img');
-        expect(element).toHaveAttribute('src', 'mayaImage');
-        expect(element).toHaveAttribute('alt', 'mayaImage');
+        const element = screen.getAllByRole('img');
+        expect(element[0]).toHaveAttribute('src', './assets/papelera.png');
+        expect(element[0]).toHaveAttribute('alt', 'papelera');
     });
 });

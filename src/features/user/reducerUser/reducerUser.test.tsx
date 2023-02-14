@@ -120,4 +120,24 @@ describe('Given reducerUser', () => {
             expect(result).toEqual(action.payload);
         });
     });
+
+    describe('Then deleteActionCreator', () => {
+        const action = {
+            type: actionTypesUser.deleteUser,
+            payload: {
+                isLogging: false,
+                isLogged: false,
+                token: '',
+                user: null,
+            },
+        };
+        const state = {
+            isLogging: false,
+            isLogged: false,
+            user: null,
+            token: '',
+        };
+        const result = userReducer(state, action);
+        expect(result).toEqual(action.payload);
+    });
 });

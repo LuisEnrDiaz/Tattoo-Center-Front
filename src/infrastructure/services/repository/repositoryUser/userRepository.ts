@@ -5,7 +5,7 @@ export class UserRepository implements RepoUser<UserI> {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:7700/users';
+        this.url = 'https://tattoo-center-back-production.up.railway.app/users';
     }
 
     createError(response: Response) {
@@ -98,7 +98,7 @@ export class UserRepository implements RepoUser<UserI> {
     deleteUser(id: string): Promise<void> {
         return fetch(this.url, {
             method: 'DELETE',
-            body: JSON.stringify(id),
+            body: JSON.stringify({ id }),
             headers: {
                 'Content-type': 'application/json',
                 Authorization: `Bearer ${localStorage.getItem('token')}`,
