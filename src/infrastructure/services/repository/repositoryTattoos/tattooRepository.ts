@@ -6,7 +6,8 @@ export class TattooRepository implements Repository<TattooI> {
     url: string;
 
     constructor() {
-        this.url = 'http://localhost:7700/tattoos';
+        this.url =
+            'https://tattoo-center-back-production.up.railway.app/tattoos';
     }
 
     createError(response: Response) {

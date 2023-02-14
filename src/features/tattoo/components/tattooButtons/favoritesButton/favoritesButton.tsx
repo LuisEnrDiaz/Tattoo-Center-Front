@@ -16,9 +16,9 @@ export function FavoritesButton({ id }: { id: string }) {
             <img
                 src="./assets/corazon.png"
                 onClick={handleAddClick}
-                style={{
-                    backgroundColor: favorite === true ? 'red' : '',
-                }}
+                // style={{
+                //     backgroundColor: favorite === true ? 'red' : '',
+                // }}
                 defaultValue={'false'}
                 alt="corazon"
             ></img>
