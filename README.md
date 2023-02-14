@@ -2,6 +2,8 @@
 
 Projecto final de Front-end en ISDI Coders, en este proyecto se llama al Back-end Tattoo-center.
 
+Dos semanas y media para entregar este proyecto, he decidido no tocarlo mas para demostrar lo que he podido hacer con el tiempo establecido.
+
 # TATTOO CENTER
 
 [**Diseño en figma de las paginas**](https://www.figma.com/file/vdlESQE81Wlj6pNbhxQa38/Tatto-lucho?node-id=0%3A1&t=VgBoaJhpwXk1qHtb-1)
